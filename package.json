@@ -1,0 +1,25 @@
+{
+  "name": "babycare-ecommerce",
+  "version": "1.0.0",
+  "description": "BabyCare – Modern Baby & Maternity E-Commerce Store",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -l 3000 .",
+    "dev": "serve -l 3000 .",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "babycare",
+    "ecommerce",
+    "store",
+    "vanilla-js",
+    "responsive",
+    "vercel"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4",
+    "vercel": "^39.0.0"
+  }
+}
