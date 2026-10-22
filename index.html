@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BabyCare | Gentle Baby & Maternity Essentials</title>
+  <meta name="description" content="BabyCare - India's most trusted online store for gentle baby care, premium maternity wear, organic diapers, feeding essentials, nursery furniture, and toys.">
+  <meta name="keywords" content="baby care, maternity, baby diapers, baby clothes, feeding bottles, cribs, baby toys, organic baby products">
+  <meta name="author" content="BabyCare India">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta property="og:image" content="BabyCare_logo_design_concept_20261019115541.jpg">
+  <meta property="og:title" content="BabyCare | Gentle Baby &amp; Maternity Essentials">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons for rich UI -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=2.2">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="container announcement-content">
+      <span class="announcement-badge">Special Offer</span>
+      <p class="announcement-text">
+        <i class="fa-solid fa-gift"></i> <strong>FREE Express Shipping</strong> on all orders over ₹999 | Use code <span class="promo-code" onclick="copyPromoCode('BABYCARE10')">BABYCARE10</span> for extra 10% off!
+      </p>
+      <div class="announcement-links">
+        <a href="#orderTracking" onclick="openOrderTrackingModal()"><i class="fa-solid fa-truck-fast"></i> Track Order</a>
+        <a href="#registry" onclick="openRegistryModal()"><i class="fa-solid fa-heart-circle-check"></i> Baby Registry</a>
+        <button class="announcement-close" onclick="closeAnnouncementBar()" aria-label="Close Announcement">&times;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <!-- Mobile Menu Trigger -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Brand Logo (Featuring official BabyCare logo design) -->
+      <a href="#home" class="brand-logo" onclick="navigateToSection('home')" aria-label="BabyCare Home">
+        <img 
+          src="BabyCare_logo_design_concept_20261019115541.jpg" 
+          alt="BabyCare - Gentle Baby &amp; Maternity Essentials" 
+          class="brand-logo-img"
+          id="mainBrandLogo"
+          onerror="this.style.display='none'; document.getElementById('fallbackBrandLogo').style.display='flex';"
+        >
+        <div class="brand-fallback-wrapper" id="fallbackBrandLogo" style="display: none;">
+          <div class="logo-icon-wrapper">
+            <i class="fa-solid fa-baby"></i>
+            <span class="sparkle-dot"></span>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">Baby<span>Care</span></span>
+            <span class="brand-tagline">Baby &amp; Maternity</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Search Bar -->
+      <div class="header-search-container">
+        <form class="search-form" id="searchForm" onsubmit="handleSearchSubmit(event)">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input 
+            type="text" 
+            id="globalSearchInput" 
+            placeholder="Search diapers, onesies, cribs, feeding bottles, brands..." 
+            autocomplete="off"
+            aria-label="Search products"
+          >
+          <button type="button" class="search-clear-btn" id="searchClearBtn" onclick="clearGlobalSearch()" style="display: none;">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <button type="submit" class="search-submit-btn" aria-label="Submit search">
+            Search
+          </button>
+        </form>
+        <!-- Search Suggestions Dropdown -->
+        <div class="search-suggestions" id="searchSuggestions" style="display: none;"></div>
+      </div>
+
+      <!-- Action Navigation Buttons -->
+      <div class="header-actions">
+        <!-- Account / Login Button -->
+        <div class="account-dropdown-wrapper" id="accountDropdownWrapper">
+          <button class="action-btn account-btn" id="accountBtn" onclick="handleAccountClick()" title="My Account">
+            <div class="user-avatar-badge" id="userAvatarBadge">
+              <i class="fa-regular fa-user"></i>
+            </div>
+            <span class="btn-label" id="userAccountLabel">Sign In</span>
+          </button>
+          <!-- User Profile Dropdown Menu (Logged In) -->
+          <div class="account-dropdown-menu" id="accountDropdownMenu" style="display: none;">
+            <div class="account-user-info">
+              <strong id="dropdownUserName">Parent User</strong>
+              <small id="dropdownUserEmail">parent@babycare.com</small>
+            </div>
+            <hr>
+            <a href="javascript:void(0)" onclick="openOrderHistoryModal()"><i class="fa-solid fa-box"></i> My Orders</a>
+            <a href="javascript:void(0)" onclick="openWishlistDrawer()"><i class="fa-solid fa-heart"></i> My Wishlist</a>
+            <a href="javascript:void(0)" onclick="openRegistryModal()"><i class="fa-solid fa-list-check"></i> Baby Registry</a>
+            <hr>
+            <a href="javascript:void(0)" onclick="handleUserLogout()" class="logout-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+          </div>
+        </div>
+
+        <!-- Wishlist Button -->
+        <button class="action-btn wishlist-btn" id="wishlistHeaderBtn" onclick="openWishlistDrawer()" title="View Wishlist" aria-label="View Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count" id="wishlistCountBadge">0</span>
+          <span class="btn-label">Wishlist</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="action-btn cart-btn" id="cartHeaderBtn" onclick="openCartDrawer()" title="View Shopping Cart" aria-label="View Shopping Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge-count" id="cartCountBadge">0</span>
+          <span class="btn-label">Cart</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Navigation Bar -->
+    <nav class="category-nav" id="categoryNav">
+      <div class="container nav-container">
+        <button class="nav-scroll-arrow left" id="navScrollLeft" onclick="scrollCategoryNav(-240)" aria-label="Scroll categories left" title="Scroll left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <ul class="nav-links" id="desktopNavLinks">
+          <li><a href="#home" class="nav-link active" data-nav="home" onclick="handleNavClick('home')"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="#shop" class="nav-link" data-nav="all" onclick="filterByCategory('all')">All Products</a></li>
+          <li><a href="#shop" class="nav-link" data-nav="diapers" onclick="filterByCategory('diapers')">Diapers &amp; Wipes</a></li>
+          <li><a href="#shop" class="nav-link" data-nav="feeding" onclick="filterByCategory('feeding')">Feeding &amp; Nursing</a></li>
+          <li><a href="#shop" class="nav-link" data-nav="clothing" onclick="filterByCategory('clothing')">Baby Clothing</a></li>
+          <li><a href="#shop" class="nav-link" data-nav="nursery" onclick="filterByCategory('nursery')">Nursery</a></li>
+          <li><a href="#shop" class="nav-link" data-nav="toys" onclick="filterByCategory('toys')">Toys &amp; Books</a></li>
+          <li><a href="#shop" class="nav-link" data-nav="maternity" onclick="filterByCategory('maternity')">Maternity</a></li>
+          <li><a href="#shop" class="nav-link text-pink" data-nav="webstructure" onclick="filterByCollection('webstructure')"><i class="fa-solid fa-wand-magic-sparkles"></i> Studio Signature</a></li>
+          <li><a href="#about" class="nav-link" data-nav="about" onclick="navigateToSection('about')">About Us</a></li>
+          <li><a href="#contact" class="nav-link" data-nav="contact" onclick="navigateToSection('contact')">Contact</a></li>
+        </ul>
+
+        <button class="nav-scroll-arrow right" id="navScrollRight" onclick="scrollCategoryNav(240)" aria-label="Scroll categories right" title="Scroll right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileMenu()"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="#home" class="brand-logo" onclick="closeMobileMenu(); navigateToSection('home')" aria-label="BabyCare Home">
+        <img 
+          src="BabyCare_logo_design_concept_20261019115541.jpg" 
+          alt="BabyCare Logo" 
+          class="brand-logo-img mobile-logo-img"
+        >
+      </a>
+      <button class="drawer-close-btn" onclick="closeMobileMenu()" aria-label="Close Navigation Menu">&times;</button>
+    </div>
+
+    <div class="mobile-search-wrapper">
+      <form onsubmit="handleMobileSearch(event)">
+        <input type="text" id="mobileSearchInput" placeholder="Search baby essentials...">
+        <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+
+    <div class="mobile-user-status" id="mobileUserStatus">
+      <!-- Injected via script -->
+    </div>
+
+    <ul class="mobile-nav-links">
+      <li><a href="#home" onclick="handleMobileNavClick('home')"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="#shop" onclick="handleMobileNavClick('shop', 'all')"><i class="fa-solid fa-store"></i> Shop All Products (26)</a></li>
+      <li><a href="#shop" onclick="handleMobileNavClick('shop', 'clothing')"><i class="fa-solid fa-shirt"></i> Baby Clothing Collection</a></li>
+      <li><a href="#shop" onclick="handleMobileNavClick('shop', 'diapers')"><i class="fa-solid fa-baby-carriage"></i> Diapers &amp; Wipes Collection</a></li>
+      <li><a href="#shop" onclick="handleMobileNavClick('shop', 'feeding')"><i class="fa-solid fa-bottle-droplet"></i> Feeding &amp; Nursing Collection</a></li>
+      <li><a href="#shop" onclick="handleMobileNavClick('shop', 'nursery')"><i class="fa-solid fa-bed"></i> Nursery Furniture</a></li>
+      <li><a href="#shop" onclick="handleMobileNavClick('shop', 'toys')"><i class="fa-solid fa-cubes"></i> Toys &amp; Books</a></li>
+      <li><a href="#shop" onclick="handleMobileNavClick('shop', 'maternity')"><i class="fa-solid fa-person-breastfeeding"></i> Maternity Care</a></li>
+      <li class="divider"></li>
+      <li><a href="#shop" onclick="closeMobileMenu(); filterByCollection('webstructure');"><i class="fa-solid fa-wand-magic-sparkles text-pink"></i> Studio Signature Collection</a></li>
+      <li><a href="javascript:void(0)" onclick="openRegistryModal(); closeMobileMenu();"><i class="fa-solid fa-gift"></i> Baby Registry</a></li>
+      <li><a href="javascript:void(0)" onclick="openOrderTrackingModal(); closeMobileMenu();"><i class="fa-solid fa-truck-fast"></i> Track Order</a></li>
+      <li><a href="#about" onclick="navigateToSection('about'); closeMobileMenu();"><i class="fa-solid fa-heart"></i> About Us</a></li>
+      <li><a href="#contact" onclick="navigateToSection('contact'); closeMobileMenu();"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main id="mainContent">
+
+    <!-- Hero Section (Featuring bright_and_heartwarming_lifestyle_photography) -->
+    <section class="hero-section" id="home">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-icon">🌿</span> 100% Pediatrician Approved &amp; Safe
+          </div>
+          <h1 class="hero-title">
+            Pure Love, Gentle Care for Your Baby's First Steps
+          </h1>
+          <p class="hero-description">
+            Discover India's most trusted sanctuary for organic baby clothing, skin-friendly diapers, sterile feeding essentials, cozy nursery decor, and empowering maternity care.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#shop" class="btn btn-primary btn-lg" onclick="scrollToShop()">
+              <i class="fa-solid fa-bag-shopping"></i> Explore 26 Essentials
+            </a>
+            <button class="btn btn-outline btn-lg" onclick="openRegistryModal()">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Baby Registry
+            </button>
+          </div>
+
+          <!-- Trust Badges Under Hero -->
+          <div class="hero-trust-bar">
+            <div class="trust-item">
+              <i class="fa-solid fa-shield-heart text-pink"></i>
+              <div>
+                <strong>Non-Toxic</strong>
+                <small>BPA &amp; Lead Free</small>
+              </div>
+            </div>
+            <div class="trust-item">
+              <i class="fa-solid fa-feather-pointed text-blue"></i>
+              <div>
+                <strong>Hypoallergenic</strong>
+                <small>Gentle on Sensitive Skin</small>
+              </div>
+            </div>
+            <div class="trust-item">
+              <i class="fa-solid fa-truck-ramp-box text-pink"></i>
+              <div>
+                <strong>Free Delivery</strong>
+                <small>Orders over ₹999</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="hero-blob-bg"></div>
+          <img 
+            src="babycare_webstructure/bright_and_heartwarming_lifestyle_photography_of_an_adorable_happy_smiling_baby/screen.png" 
+            alt="Adorable happy smiling baby with BabyCare essentials" 
+            class="hero-img"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80';"
+          >
+          <!-- Floating Hero Cards -->
+          <div class="floating-hero-card floating-card-top">
+            <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+            <div class="card-info">
+              <strong>4.9 / 5 Rating</strong>
+              <small>Trusted by 50,000+ Indian Parents</small>
+            </div>
+          </div>
+
+          <div class="floating-hero-card floating-card-bottom">
+            <div class="card-icon green"><i class="fa-solid fa-seedling"></i></div>
+            <div class="card-info">
+              <strong>100% Organic</strong>
+              <small>GOTS Certified Cotton</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Features Strip -->
+    <section class="features-strip">
+      <div class="container features-grid">
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-baby-carriage"></i></div>
+          <div class="feature-text">
+            <h3>Dermatologist Tested</h3>
+            <p>100% safe formulations designed for sensitive newborn skin</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+          <div class="feature-text">
+            <h3>Easy 30-Day Returns</h3>
+            <p>Simulated hassle-free returns &amp; instant store credits</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="feature-text">
+            <h3>Lightning Dispatch</h3>
+            <p>Fast fulfillment across 18,000+ PIN codes in India</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-user-doctor"></i></div>
+          <div class="feature-text">
+            <h3>Parenting Support</h3>
+            <p>24/7 dedicated advice on baby gear &amp; sizing</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Categories Section (Showcasing all 5 workspace asset folders) -->
+    <section class="section categories-section" id="categoriesSection">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-heading">Shop By Collection</span>
+          <h2 class="section-title">Everything Your Precious One Needs</h2>
+          <p class="section-desc">Handpicked organic, certified, and durable essentials crafted with love and pediatric standards.</p>
+        </div>
+
+        <div class="categories-grid">
+          <!-- Category 1: Baby Clothing Collection -->
+          <div class="category-card" onclick="filterByCategory('clothing')">
+            <div class="cat-image-box">
+              <img 
+                src="Baby Clothing/Onesies & Bodysuits/Two_baby_bodysuits_displayed_tog…_20261022081246.jpg" 
+                alt="Baby Clothing Collection"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=500&q=80';"
+              >
+              <div class="cat-badge">6 Products</div>
+            </div>
+            <div class="cat-info">
+              <h3>Baby Clothing</h3>
+              <p>Organic cotton onesies, zip sleepers, knit cardigans &amp; soft booties</p>
+              <span class="cat-link">Explore Collection <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Category 2: Diapers & Wipes Collection -->
+          <div class="category-card" onclick="filterByCategory('diapers')">
+            <div class="cat-image-box">
+              <img 
+                src="Diapers & Wipes/Diaper Care Set/Baby_diaper_care_bundle_arrangement_20261022075601.jpg" 
+                alt="Diapers and Wipes Collection"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=500&q=80';"
+              >
+              <div class="cat-badge">6 Products</div>
+            </div>
+            <div class="cat-info">
+              <h3>Diapers &amp; Wipes</h3>
+              <p>Feather-soft disposable pants, organic cloth diapers &amp; soothing wipes</p>
+              <span class="cat-link">Explore Collection <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Category 3: Feeding & Nursing Collection -->
+          <div class="category-card" onclick="filterByCategory('feeding')">
+            <div class="cat-image-box">
+              <img 
+                src="Feeding & Nursing/Baby Bottles/Baby_feeding_bottles_displayed_20261022075850.jpg" 
+                alt="Feeding and Nursing Collection"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=500&q=80';"
+              >
+              <div class="cat-badge">6 Products</div>
+            </div>
+            <div class="cat-info">
+              <h3>Feeding &amp; Nursing</h3>
+              <p>Anti-colic glass bottles, electric breast pumps, silicone sets &amp; bibs</p>
+              <span class="cat-link">Explore Collection <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Category 4: Nursery & Furniture -->
+          <div class="category-card" onclick="filterByCategory('nursery')">
+            <div class="cat-image-box">
+              <img 
+                src="Nursery & Maternity/Cribs & Bassinets/Oak_baby_crib_with_blanket_20261022081819.jpg" 
+                alt="Nursery and Furniture"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=500&q=80';"
+              >
+              <div class="cat-badge">3 Products</div>
+            </div>
+            <div class="cat-info">
+              <h3>Nursery &amp; Furniture</h3>
+              <p>Solid oak cribs, felt mobile chimes, smart monitors &amp; organizers</p>
+              <span class="cat-link">Explore Collection <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Category 5: Toys & Books Collection -->
+          <div class="category-card" onclick="filterByCategory('toys')">
+            <div class="cat-image-box">
+              <img 
+                src="Nursery & Maternity/Toys & Books/Baby_playtime_collection_arrange…_20261022082238.jpg" 
+                alt="Toys and Books Collection"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=500&q=80';"
+              >
+              <div class="cat-badge">2 Products</div>
+            </div>
+            <div class="cat-info">
+              <h3>Toys &amp; Books</h3>
+              <p>Montessori wood sets, sensory teethers, keepsake memory books</p>
+              <span class="cat-link">Explore Collection <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Category 6: Maternity & Nursing Collection -->
+          <div class="category-card" onclick="filterByCategory('maternity')">
+            <div class="cat-image-box">
+              <img 
+                src="Nursery & Maternity/Maternity Wear/Maternity_clothing_collection_on…_20261022081937.jpg" 
+                alt="Maternity Products Collection"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=500&q=80';"
+              >
+              <div class="cat-badge">3 Products</div>
+            </div>
+            <div class="cat-info">
+              <h3>Maternity &amp; Care</h3>
+              <p>Body nursing pillows, postpartum modal loungewear &amp; wrap dresses</p>
+              <span class="cat-link">Explore Collection <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Age-based Stage Recommendation Quiz / Interactive Filter -->
+    <section class="section age-stage-section">
+      <div class="container">
+        <div class="age-stage-card">
+          <div class="stage-text">
+            <span class="sub-heading"><i class="fa-solid fa-seedling"></i> Personalized For Your Child</span>
+            <h2>Shop By Baby's Development Stage</h2>
+            <p>Every milestone deserves tailored comfort and safety. Pick your child's age group to view recommended essentials:</p>
+          </div>
+          <div class="stage-buttons">
+            <button class="stage-btn active" onclick="filterByAgeGroup('0-3 Months')">
+              <span class="stage-icon">👶</span>
+              <strong>0 - 3 Months</strong>
+              <small>Newborn Comfort</small>
+            </button>
+            <button class="stage-btn" onclick="filterByAgeGroup('3-6 Months')">
+              <span class="stage-icon">🍼</span>
+              <strong>3 - 6 Months</strong>
+              <small>Teething &amp; Smiles</small>
+            </button>
+            <button class="stage-btn" onclick="filterByAgeGroup('6-12 Months')">
+              <span class="stage-icon">🧸</span>
+              <strong>6 - 12 Months</strong>
+              <small>Weaning &amp; Crawling</small>
+            </button>
+            <button class="stage-btn" onclick="filterByAgeGroup('1-3 Years')">
+              <span class="stage-icon">🚀</span>
+              <strong>1 - 3 Years</strong>
+              <small>Toddler Adventures</small>
+            </button>
+            <button class="stage-btn" onclick="filterByAgeGroup('Maternity')">
+              <span class="stage-icon">🤰</span>
+              <strong>Maternity</strong>
+              <small>Pregnancy &amp; Beyond</small>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Product Catalog & Filter Section -->
+    <section class="section shop-section" id="shop">
+      <div class="container">
+        <div class="section-header">
+          <div class="header-left">
+            <span class="sub-heading">BabyCare Complete Catalog</span>
+            <h2 class="section-title" id="shopTitle">Our Baby &amp; Maternity Collection</h2>
+            <p class="section-desc" id="shopResultCount">Showing all 26 verified baby care products</p>
+          </div>
+
+
+          <!-- Quick Category Filter Pills -->
+          <div class="category-pills-bar" id="categoryPillsBar">
+            <button class="pill-btn active" data-cat="all" onclick="filterByCategory('all')">All Categories</button>
+            <button class="pill-btn" data-cat="diapers" onclick="filterByCategory('diapers')">Diapers &amp; Wipes</button>
+            <button class="pill-btn" data-cat="feeding" onclick="filterByCategory('feeding')">Feeding &amp; Nursing</button>
+            <button class="pill-btn" data-cat="clothing" onclick="filterByCategory('clothing')">Baby Clothing</button>
+            <button class="pill-btn" data-cat="nursery" onclick="filterByCategory('nursery')">Nursery</button>
+            <button class="pill-btn" data-cat="toys" onclick="filterByCategory('toys')">Toys &amp; Books</button>
+            <button class="pill-btn" data-cat="maternity" onclick="filterByCategory('maternity')">Maternity</button>
+          </div>
+        </div>
+
+        <!-- Filter Controls Toolbar -->
+        <div class="shop-filter-bar">
+          <!-- Price Range Slider -->
+          <div class="filter-group price-filter-group">
+            <label for="priceRangeInput">Max Price: <strong id="priceDisplay">₹25,000</strong></label>
+            <input 
+              type="range" 
+              id="priceRangeInput" 
+              min="200" 
+              max="25000" 
+              step="100" 
+              value="25000" 
+              oninput="handlePriceFilter(this.value)"
+            >
+          </div>
+
+          <!-- Age Filter Dropdown -->
+          <div class="filter-group">
+            <label for="ageFilterSelect">Age Group</label>
+            <div class="select-wrapper">
+              <select id="ageFilterSelect" onchange="handleAgeSelectChange(this.value)">
+                <option value="all">All Ages</option>
+                <option value="0-3 Months">Newborn (0-3 Months)</option>
+                <option value="3-6 Months">Infant (3-6 Months)</option>
+                <option value="6-12 Months">Crawler (6-12 Months)</option>
+                <option value="1-3 Years">Toddler (1-3 Years)</option>
+                <option value="Maternity">Maternity &amp; Mom</option>
+              </select>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+
+          <!-- Sort Select -->
+          <div class="filter-group">
+            <label for="sortSelect">Sort By</label>
+            <div class="select-wrapper">
+              <select id="sortSelect" onchange="handleSortChange(this.value)">
+                <option value="featured">Featured &amp; Recommended</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Highest Customer Rating</option>
+                <option value="popular">Most Popular</option>
+              </select>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+
+          <!-- Clear Filters Button -->
+          <div class="filter-group action-group">
+            <button class="btn btn-secondary btn-clear-filters" id="clearFiltersBtn" onclick="resetAllFilters()">
+              <i class="fa-solid fa-filter-circle-xmark"></i> Clear Filters
+            </button>
+          </div>
+        </div>
+
+        <!-- Active Filter Tags Display -->
+        <div class="active-tags-row" id="activeTagsRow" style="display: none;">
+          <span class="active-tag-label">Active Filters:</span>
+          <div class="tag-chips" id="tagChipsContainer"></div>
+        </div>
+
+        <!-- Product Grid Container (Populated dynamically with all 26 items) -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Populated dynamically via script.js -->
+        </div>
+
+        <!-- Empty State Container -->
+        <div class="empty-products-state" id="emptyProductsState" style="display: none;">
+          <div class="empty-icon">🧸</div>
+          <h3>No Baby Products Found</h3>
+          <p>We couldn't find any products matching your selected search or filter criteria. Try adjusting your filters or price range.</p>
+          <button class="btn btn-primary" onclick="resetAllFilters()">
+            <i class="fa-solid fa-arrows-rotate"></i> Reset All Filters
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotional Banner For New Parents -->
+    <section class="section promo-banner-section">
+      <div class="container">
+        <div class="promo-banner-card">
+          <div class="promo-content">
+            <span class="promo-pill">New Parent Starter Bundle</span>
+            <h2 class="promo-title">Welcoming a New Bundle of Joy?</h2>
+            <p class="promo-subtitle">
+              Get our pediatrician-curated hospital bag &amp; newborn nursery starter bundle at an exclusive <strong>30% savings</strong>. Includes 10 organic essentials from organic onesies to pure water wipes.
+            </p>
+            <div class="promo-perks">
+              <span><i class="fa-solid fa-circle-check"></i> Free Welcome Gift</span>
+              <span><i class="fa-solid fa-circle-check"></i> Complimentary Pediatrician Call</span>
+              <span><i class="fa-solid fa-circle-check"></i> 1-Year Quality Warranty</span>
+            </div>
+            <div class="promo-actions">
+              <button class="btn btn-primary btn-lg" onclick="openPromoBundleModal()">
+                <i class="fa-solid fa-gift"></i> Claim Starter Bundle (Save 30%)
+              </button>
+              <button class="btn btn-white btn-lg" onclick="openRegistryModal()">
+                Add to Baby Registry
+              </button>
+            </div>
+          </div>
+          <div class="promo-image-box">
+            <img 
+              src="Diapers & Wipes/Diaper Care Set/Baby_diaper_care_bundle_arrangement_20261022075601.jpg" 
+              alt="Newborn Baby Starter Bundle"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=600&q=80';"
+            >
+            <div class="discount-sticker">
+              <span class="disc-val">30%</span>
+              <span class="disc-txt">OFF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Shop With Us Section -->
+    <section class="section why-us-section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-heading">The BabyCare Promise</span>
+          <h2 class="section-title">Why 50,000+ Parents Trust Us Daily</h2>
+          <p class="section-desc">We understand that nothing comes before your child's well-being. Here is our unwavering commitment to quality and safety.</p>
+        </div>
+
+        <div class="why-us-grid">
+          <div class="why-card">
+            <div class="why-icon-box pink">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <h3>100% Certified Non-Toxic</h3>
+            <p>Every fabric, bottle, and toy is certified BPA-free, lead-free, and crafted using GOTS certified organic materials safe for tender baby mouths and skin.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon-box blue">
+              <i class="fa-solid fa-stethoscope"></i>
+            </div>
+            <h3>Pediatrician Approved</h3>
+            <p>Developed and vetted in collaboration with leading pediatric dermatologists, lactation consultants, and child development specialists in India.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon-box gold">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Simulated Secure Checkout</h3>
+            <p>Experience an intuitive checkout with Cash on Delivery, instant UPI QR simulation, and simulated payment security without real money risk.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon-box mint">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <h3>Hassle-Free 30-Day Returns</h3>
+            <p>Not the right size or fit? Our simulated return portal allows effortless 1-click replacements and doorstep reverse pickups.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-heading">Heartwarming Stories</span>
+          <h2 class="section-title">Loved by Parents Across India</h2>
+          <p class="section-desc">Read genuine sample experiences from new moms, dads, and grandparents who rely on BabyCare.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "The organic bamboo footie sleepers and water wipes are an absolute blessing! My 4-month-old daughter had sensitive eczema, and BabyCare's fabric never caused a single rash. The quality is noticeably better than standard store brands."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <span>PP</span>
+              </div>
+              <div class="author-info">
+                <strong>Pooja &amp; Rohan Patel</strong>
+                <small>Parents to Ananya (4 Months) &bull; Mumbai</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Creating our Baby Registry on BabyCare was the best decision for our baby shower. All our friends and relatives picked gifts directly from our list! The solid oak crib and natural anti-colic feeding bottles arrived impeccably packed."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar pink-avatar">
+                <span>SK</span>
+              </div>
+              <div class="author-info">
+                <strong>Sneha Kulkarni</strong>
+                <small>New Mom to Kabir (2 Months) &bull; Bengaluru</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "The ergonomic nursing pillow and postpartum modal loungewear gave my wife incredible relief during recovery. Outstanding customer service, clear order tracking, and super fast delivery. Highly recommended to all new dads!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar blue-avatar">
+                <span>AV</span>
+              </div>
+              <div class="author-info">
+                <strong>Arun Verma</strong>
+                <small>Dad to Twins Reyansh &amp; Diya &bull; New Delhi</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Baby Registry Spotlight Section -->
+    <section class="section registry-banner-section" id="registry">
+      <div class="container">
+        <div class="registry-card">
+          <div class="registry-text">
+            <span class="sub-heading"><i class="fa-solid fa-gift"></i> BabyCare Registry</span>
+            <h2>Create Your Dream Baby Shower Registry</h2>
+            <p>
+              Planning for baby's arrival? Add your favorite nursery furniture, clothing, and feeding essentials into a unified wishlist that you can share with family and friends!
+            </p>
+            <div class="registry-stats">
+              <div class="r-stat">
+                <strong>100% Free</strong>
+                <small>No fees to create</small>
+              </div>
+              <div class="r-stat">
+                <strong>15% Off</strong>
+                <small>Registry completion bonus</small>
+              </div>
+              <div class="r-stat">
+                <strong>Group Gifting</strong>
+                <small>Friends can split costs</small>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-lg" onclick="openRegistryModal()">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Open My Registry
+            </button>
+          </div>
+          <div class="registry-visual">
+            <div class="registry-preview-card">
+              <div class="r-preview-header">
+                <i class="fa-solid fa-heart text-pink"></i>
+                <span>Baby Shower Wishlist</span>
+                <span class="r-chip">Active</span>
+              </div>
+              <div class="r-preview-progress">
+                <div class="r-progress-info">
+                  <span>Registry Goals: 6 Items Added</span>
+                  <strong>60%</strong>
+                </div>
+                <div class="r-bar"><div class="r-fill" style="width: 60%;"></div></div>
+              </div>
+              <div class="r-item-samples">
+                <div class="r-sample-item">
+                  <span class="r-icon">🛏️</span>
+                  <div>
+                    <strong>Oak Convertible Crib</strong>
+                    <small>₹18,999 &bull; Reserved by Grandma</small>
+                  </div>
+                </div>
+                <div class="r-sample-item">
+                  <span class="r-icon">🍼</span>
+                  <div>
+                    <strong>Anti-Colic Feeding Set</strong>
+                    <small>₹1,499 &bull; Purchased by Priya</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Expert Support Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card-wrapper">
+          <div class="contact-info-col">
+            <span class="sub-heading">We Are Here For You</span>
+            <h2>Need Parenting Advice or Help With An Order?</h2>
+            <p>
+              Whether you need guidance choosing the right diaper size, setting up an oak crib, or tracking your order, our dedicated parenting care specialists are eager to help.
+            </p>
+
+            <div class="contact-details-list">
+              <div class="contact-item">
+                <div class="c-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                <div>
+                  <strong>Toll-Free Parenting Helpline</strong>
+                  <p>1800-222-BABY (1800-222-2229) &bull; Mon-Sat (9 AM - 8 PM IST)</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <strong>Email Support</strong>
+                  <p>care@babycare-india.com &bull; Guaranteed response within 4 hours</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <strong>Headquarters &amp; Fulfillment Hub</strong>
+                  <p>BabyCare Retail Ltd, Level 4, Lotus Park, Bandra-Kurla Complex, Mumbai 400051</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-col">
+            <div class="form-card">
+              <h3>Send Our Specialists a Message</h3>
+              <p>Fill out the form below for fast support or parenting advice.</p>
+              <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                <div class="form-group">
+                  <label for="contactName">Your Name <span class="required">*</span></label>
+                  <input type="text" id="contactName" placeholder="e.g. Ananya Sharma" required>
+                  <span class="error-msg" id="contactNameError"></span>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactEmail">Email Address <span class="required">*</span></label>
+                    <input type="email" id="contactEmail" placeholder="ananya@example.com" required>
+                    <span class="error-msg" id="contactEmailError"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="contactPhone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="contactPhone" placeholder="10-digit mobile number" required>
+                    <span class="error-msg" id="contactPhoneError"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactTopic">Topic of Inquiry</label>
+                  <div class="select-wrapper">
+                    <select id="contactTopic">
+                      <option value="general">Product Inquiry / Sizing Advice</option>
+                      <option value="order">Order Tracking &amp; Shipping</option>
+                      <option value="registry">Baby Registry Question</option>
+                      <option value="returns">Simulated Return / Replacement</option>
+                      <option value="feedback">Parent Feedback</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactMessage">Your Message <span class="required">*</span></label>
+                  <textarea id="contactMessage" rows="4" placeholder="How can our baby care team assist you today?" required></textarea>
+                  <span class="error-msg" id="contactMessageError"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                  <i class="fa-solid fa-paper-plane"></i> Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-section">
+      <div class="container newsletter-container">
+        <div class="newsletter-box">
+          <div class="newsletter-header">
+            <span class="news-icon">💌</span>
+            <h2>Join the BabyCare Parenting Club</h2>
+            <p>Subscribe for pediatric health tips, milestone guides, early access to sales, and an instant <strong>₹200 welcome voucher</strong> on your first order.</p>
+          </div>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+            <div class="input-with-button">
+              <i class="fa-regular fa-envelope"></i>
+              <input 
+                type="email" 
+                id="newsletterEmail" 
+                placeholder="Enter your email address (e.g. mom@babycare.com)" 
+                required
+              >
+              <button type="submit" class="btn btn-primary">
+                Subscribe &amp; Save ₹200
+              </button>
+            </div>
+            <small class="privacy-note">🔒 We value your family's privacy. No spam ever. Unsubscribe anytime.</small>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Complete Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top-grid">
+      <!-- Col 1: Brand Info -->
+      <div class="footer-col brand-col">
+        <a href="#home" class="brand-logo footer-logo" onclick="navigateToSection('home')" aria-label="BabyCare Home">
+          <img 
+            src="BabyCare_logo_design_concept_20261019115541.jpg" 
+            alt="BabyCare Official Brand Logo" 
+            class="brand-logo-img footer-logo-img"
+          >
+        </a>
+        <p class="footer-text">
+          India's most tender, certified baby care and maternity lifestyle destination. Nurturing every baby's precious first step with organic, skin-safe, and pediatric-tested products.
+        </p>
+        <div class="social-links">
+          <a href="javascript:void(0)" title="Instagram" class="social-icon" onclick="showToast('BabyCare Instagram @babycare_india', 'info')"><i class="fa-brands fa-instagram"></i></a>
+          <a href="javascript:void(0)" title="Facebook" class="social-icon" onclick="showToast('BabyCare Facebook Community', 'info')"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="javascript:void(0)" title="YouTube" class="social-icon" onclick="showToast('BabyCare Parenting Tips Channel', 'info')"><i class="fa-brands fa-youtube"></i></a>
+          <a href="javascript:void(0)" title="Pinterest" class="social-icon" onclick="showToast('BabyCare Nursery Inspo on Pinterest', 'info')"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4>Explore BabyCare</h4>
+        <ul class="footer-links">
+          <li><a href="#home" onclick="navigateToSection('home')">Home</a></li>
+          <li><a href="#shop" onclick="filterByCategory('all')">All Products (26)</a></li>
+          <li><a href="javascript:void(0)" onclick="openRegistryModal()">Baby Registry</a></li>
+          <li><a href="javascript:void(0)" onclick="openOrderTrackingModal()">Track Your Order</a></li>
+          <li><a href="#about" onclick="navigateToSection('about')">Why Shop With Us</a></li>
+          <li><a href="#contact" onclick="navigateToSection('contact')">Parenting Support</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Categories & Collections -->
+      <div class="footer-col">
+        <h4>Workspace Collections</h4>
+        <ul class="footer-links">
+          <li><a href="#shop" onclick="filterByCollection('clothing')">Baby Clothing (5 items)</a></li>
+          <li><a href="#shop" onclick="filterByCollection('diapers')">Diapers &amp; Wipes (6 items)</a></li>
+          <li><a href="#shop" onclick="filterByCollection('feeding')">Feeding &amp; Nursing (6 items)</a></li>
+          <li><a href="#shop" onclick="filterByCollection('nursery-maternity')">Nursery &amp; Maternity (5 items)</a></li>
+          <li><a href="#shop" onclick="filterByCollection('webstructure')">Studio Signature Series (5 items)</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Trust & Simulated Checkout -->
+      <div class="footer-col">
+        <h4>Simulated Payments &amp; Safety</h4>
+        <p class="sim-notice">
+          <i class="fa-solid fa-circle-info text-pink"></i> <strong>Demo Notice:</strong> This website is a front-end e-commerce demonstration. All payments, carts, logins, and orders are simulated locally via browser storage.
+        </p>
+        <div class="payment-badges">
+          <span class="pay-badge"><i class="fa-brands fa-google-pay"></i> UPI</span>
+          <span class="pay-badge"><i class="fa-regular fa-credit-card"></i> RuPay / Visa</span>
+          <span class="pay-badge"><i class="fa-solid fa-money-bill-1-wave"></i> COD</span>
+          <span class="pay-badge"><i class="fa-solid fa-shield-halved"></i> 256-Bit SSL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 BabyCare E-Commerce Pvt. Ltd. Made with ❤️ for happy babies &amp; empowered parents.</p>
+        <div class="bottom-links">
+          <a href="javascript:void(0)" onclick="openPrivacyModal()">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="javascript:void(0)" onclick="openTermsModal()">Terms of Service</a>
+          <span>&bull;</span>
+          <a href="javascript:void(0)" onclick="openShippingModal()">Shipping &amp; Returns</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- MODALS & DRAWERS CONTAINER                     -->
+  <!-- ============================================== -->
+
+  <!-- 1. Shopping Cart Slide-over Drawer -->
+  <div class="drawer-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <div class="drawer-title-box">
+        <i class="fa-solid fa-cart-shopping text-pink"></i>
+        <h3>Your Shopping Cart (<span id="cartDrawerCount">0</span>)</h3>
+      </div>
+      <button class="drawer-close-btn" onclick="closeCartDrawer()" aria-label="Close Shopping Cart">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress Meter -->
+    <div class="shipping-meter-box" id="shippingMeterBox">
+      <p id="shippingMeterText">Add ₹999 for FREE Express Shipping!</p>
+      <div class="meter-bar"><div class="meter-fill" id="shippingMeterFill" style="width: 0%;"></div></div>
+    </div>
+
+    <!-- Cart Items Scrollable List -->
+    <div class="cart-items-container" id="cartItemsContainer">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- Empty Cart View -->
+    <div class="empty-cart-view" id="emptyCartView" style="display: none;">
+      <div class="empty-cart-icon">🛒</div>
+      <h4>Your Shopping Cart is Empty</h4>
+      <p>Looks like you haven't added anything to your cart yet. Explore our gentle baby products!</p>
+      <button class="btn btn-primary" onclick="closeCartDrawer(); scrollToShop();">
+        <i class="fa-solid fa-bag-shopping"></i> Start Shopping
+      </button>
+    </div>
+
+    <!-- Cart Footer with Pricing & Checkout -->
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <!-- Coupon Code Section -->
+      <div class="coupon-box">
+        <div class="coupon-input-row">
+          <input type="text" id="cartCouponInput" placeholder="Enter coupon (e.g. BABYCARE10)" uppercase>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="applyCartCoupon()">Apply</button>
+        </div>
+        <div class="coupon-feedback" id="couponFeedback"></div>
+      </div>
+
+      <!-- Cost Calculation Breakdown -->
+      <div class="cart-summary-breakdown">
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <strong id="cartSubtotal">₹0</strong>
+        </div>
+        <div class="summary-line" id="cartDiscountRow" style="display: none;">
+          <span class="text-green"><i class="fa-solid fa-tags"></i> Coupon Discount</span>
+          <strong class="text-green" id="cartDiscount">-₹0</strong>
+        </div>
+        <div class="summary-line">
+          <span>Estimated Shipping</span>
+          <strong id="cartShipping">₹0</strong>
+        </div>
+        <hr>
+        <div class="summary-line total-line">
+          <span>Total Payable</span>
+          <strong id="cartGrandTotal">₹0</strong>
+        </div>
+      </div>
+
+      <div class="cart-actions-row">
+        <button class="btn btn-primary btn-block btn-lg" onclick="proceedToCheckout()">
+          Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="btn btn-link btn-block" onclick="closeCartDrawer(); scrollToShop();">
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. Wishlist Slide-over Drawer -->
+  <div class="drawer-overlay" id="wishlistOverlay" onclick="closeWishlistDrawer()"></div>
+  <aside class="cart-drawer" id="wishlistDrawer">
+    <div class="drawer-header">
+      <div class="drawer-title-box">
+        <i class="fa-solid fa-heart text-pink"></i>
+        <h3>My Saved Wishlist (<span id="wishlistDrawerCount">0</span>)</h3>
+      </div>
+      <button class="drawer-close-btn" onclick="closeWishlistDrawer()" aria-label="Close Wishlist">&times;</button>
+    </div>
+
+    <!-- Wishlist Items List -->
+    <div class="cart-items-container" id="wishlistItemsContainer">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- Empty Wishlist View -->
+    <div class="empty-cart-view" id="emptyWishlistView" style="display: none;">
+      <div class="empty-cart-icon">💖</div>
+      <h4>Your Wishlist is Empty</h4>
+      <p>Save items you love to keep track of them for later or add them to your baby registry.</p>
+      <button class="btn btn-primary" onclick="closeWishlistDrawer(); scrollToShop();">
+        <i class="fa-solid fa-heart"></i> Explore Products
+      </button>
+    </div>
+  </aside>
+
+  <!-- 3. Product Details Quick View Modal -->
+  <div class="modal-backdrop" id="productModalBackdrop" onclick="closeProductModal()"></div>
+  <div class="modal-dialog product-details-modal" id="productModal">
+    <button class="modal-close-btn" onclick="closeProductModal()" aria-label="Close Product View">&times;</button>
+    <div class="product-modal-content" id="productModalContent">
+      <!-- Populated dynamically via script.js -->
+    </div>
+  </div>
+
+  <!-- 4. Multi-Step Checkout Modal -->
+  <div class="modal-backdrop" id="checkoutBackdrop"></div>
+  <div class="modal-dialog checkout-modal" id="checkoutModal">
+    <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="Close Checkout">&times;</button>
+    
+    <div class="checkout-header">
+      <div class="checkout-title-area">
+        <img 
+          src="BabyCare_logo_design_concept_20261019115541.jpg" 
+          alt="BabyCare Logo" 
+          class="brand-logo-img checkout-logo-img"
+        >
+        <h2>Simulated Checkout</h2>
+      </div>
+      <span class="sim-badge"><i class="fa-solid fa-flask"></i> Sandbox Demonstration</span>
+    </div>
+
+    <!-- Checkout Progress Indicator -->
+    <div class="checkout-steps-bar">
+      <div class="step-indicator active" id="stepIndicator1">
+        <span class="step-num">1</span>
+        <span class="step-label">Shipping Details</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-indicator" id="stepIndicator2">
+        <span class="step-num">2</span>
+        <span class="step-label">Payment &amp; Confirm</span>
+      </div>
+    </div>
+
+    <div class="checkout-modal-body">
+      <!-- Step 1: Customer Details & Shipping Address -->
+      <div class="checkout-step-page" id="checkoutStep1">
+        <form id="shippingForm" onsubmit="handleShippingSubmit(event)">
+          <h3 class="step-heading"><i class="fa-solid fa-location-dot"></i> Where should we deliver?</h3>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="shipFullName">Full Name <span class="required">*</span></label>
+              <input type="text" id="shipFullName" placeholder="e.g. Radhika Sharma" required>
+              <span class="error-msg" id="shipFullNameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="shipPhone">Mobile Number (for SMS Tracking) <span class="required">*</span></label>
+              <input type="tel" id="shipPhone" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
+              <span class="error-msg" id="shipPhoneError"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="shipEmail">Email Address (for order receipts) <span class="required">*</span></label>
+            <input type="email" id="shipEmail" placeholder="radhika@example.com" required>
+            <span class="error-msg" id="shipEmailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="shipAddress">Street Address / Apartment / House No. <span class="required">*</span></label>
+            <input type="text" id="shipAddress" placeholder="Flat 402, Sunshine Heights, 14th Main Road" required>
+            <span class="error-msg" id="shipAddressError"></span>
+          </div>
+
+          <div class="form-row three-cols">
+            <div class="form-group">
+              <label for="shipCity">City <span class="required">*</span></label>
+              <input type="text" id="shipCity" placeholder="Mumbai" required>
+              <span class="error-msg" id="shipCityError"></span>
+            </div>
+            <div class="form-group">
+              <label for="shipState">State <span class="required">*</span></label>
+              <div class="select-wrapper">
+                <select id="shipState" required>
+                  <option value="">Select State</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Delhi">Delhi NCR</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="West Bengal">West Bengal</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Other">Other State</option>
+                </select>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <span class="error-msg" id="shipStateError"></span>
+            </div>
+            <div class="form-group">
+              <label for="shipPincode">PIN Code <span class="required">*</span></label>
+              <input type="text" id="shipPincode" placeholder="400001" required pattern="[0-9]{6}">
+              <span class="error-msg" id="shipPincodeError"></span>
+            </div>
+          </div>
+
+          <!-- Delivery Speed Options -->
+          <h3 class="step-heading mt-4"><i class="fa-solid fa-truck-fast"></i> Choose Delivery Speed</h3>
+          <div class="delivery-options-grid">
+            <label class="delivery-card active" id="deliveryStandardLabel">
+              <input type="radio" name="deliverySpeed" value="standard" checked onchange="handleDeliverySpeedChange('standard')">
+              <div class="del-info">
+                <strong>Standard Delivery (3-5 Days)</strong>
+                <small>Free on orders over ₹999, else ₹99</small>
+              </div>
+              <span class="del-price" id="standardDelCostText">Free</span>
+            </label>
+
+            <label class="delivery-card" id="deliveryExpressLabel">
+              <input type="radio" name="deliverySpeed" value="express" onchange="handleDeliverySpeedChange('express')">
+              <div class="del-info">
+                <strong>Express Priority (Next Day Air)</strong>
+                <small>Safe priority handling for urgent newborn needs</small>
+              </div>
+              <span class="del-price">₹149</span>
+            </label>
+          </div>
+
+          <div class="checkout-footer-buttons">
+            <button type="button" class="btn btn-secondary" onclick="closeCheckoutModal()">Back to Cart</button>
+            <button type="submit" class="btn btn-primary">Continue to Payment <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 2: Payment Simulation & Order Review -->
+      <div class="checkout-step-page" id="checkoutStep2" style="display: none;">
+        <div class="payment-step-layout">
+          <div class="payment-methods-col">
+            <h3 class="step-heading"><i class="fa-solid fa-wallet"></i> Choose Payment Method</h3>
+            <p class="sim-notice-box">
+              <i class="fa-solid fa-lock text-green"></i> <strong>Simulation Mode:</strong> This frontend does NOT take real cards or initiate bank transfers. Feel free to test with demo details!
+            </p>
+
+            <!-- Payment Method Tabs -->
+            <div class="payment-tabs">
+              <button class="pay-tab active" data-method="cod" onclick="selectPaymentMethod('cod')">
+                <i class="fa-solid fa-money-bill-1-wave"></i> Cash on Delivery
+              </button>
+              <button class="pay-tab" data-method="upi" onclick="selectPaymentMethod('upi')">
+                <i class="fa-brands fa-google-pay"></i> UPI (GPay/PhonePe)
+              </button>
+              <button class="pay-tab" data-method="card" onclick="selectPaymentMethod('card')">
+                <i class="fa-regular fa-credit-card"></i> Card Simulation
+              </button>
+            </div>
+
+            <!-- Payment Panels -->
+            <div class="payment-tab-content">
+              <!-- COD Panel -->
+              <div class="pay-panel active" id="payPanelCOD">
+                <div class="cod-box">
+                  <div class="cod-icon">💵</div>
+                  <h4>Cash / Pay on Delivery Available</h4>
+                  <p>You can pay via Cash, UPI QR code, or Card at your doorstep when our delivery executive arrives.</p>
+                  <div class="verified-tag"><i class="fa-solid fa-check"></i> Zero extra COD charges</div>
+                </div>
+              </div>
+
+              <!-- UPI Panel -->
+              <div class="pay-panel" id="payPanelUPI" style="display: none;">
+                <div class="upi-box">
+                  <h4>Simulated Instant UPI Payment</h4>
+                  <p>Scan demo QR code with any UPI App (Google Pay, PhonePe, Paytm, CRED):</p>
+                  <div class="upi-qr-card">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'><rect width='160' height='160' fill='%23ffffff'/><rect x='20' y='20' width='40' height='40' fill='%23E85D7A'/><rect x='100' y='20' width='40' height='40' fill='%23333333'/><rect x='20' y='100' width='40' height='40' fill='%23333333'/><rect x='30' y='30' width='20' height='20' fill='%23ffffff'/><rect x='110' y='30' width='20' height='20' fill='%23ffffff'/><rect x='30' y='110' width='20' height='20' fill='%23ffffff'/><rect x='70' y='70' width='20' height='20' fill='%23E85D7A'/><rect x='100' y='100' width='40' height='40' fill='%237EC8E3'/></svg>" alt="Demo UPI QR" class="demo-qr-img">
+                    <span>UPI ID: <strong>babycare.demo@upi</strong></span>
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="demoUpiId">Or Enter Your VPA / UPI ID:</label>
+                    <input type="text" id="demoUpiId" placeholder="e.g. parent@oksbi" value="parent@oksbi">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Panel -->
+              <div class="pay-panel" id="payPanelCard" style="display: none;">
+                <div class="card-simulation-box">
+                  <h4>Simulated Card Payment</h4>
+                  <div class="form-group">
+                    <label for="demoCardNumber">Card Number (Simulated)</label>
+                    <input type="text" id="demoCardNumber" placeholder="4111 2222 3333 4444" value="4111 2222 3333 4444">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="demoCardExpiry">Expiry</label>
+                      <input type="text" id="demoCardExpiry" placeholder="MM/YY" value="12/28">
+                    </div>
+                    <div class="form-group">
+                      <label for="demoCardCvv">CVV</label>
+                      <input type="password" id="demoCardCvv" placeholder="123" value="789">
+                    </div>
+                  </div>
+                  <small class="text-muted"><i class="fa-solid fa-shield-halved"></i> Demo Sandbox: No real card information is stored or charged.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Checkout Order Review Summary Sidebar -->
+          <div class="checkout-review-col">
+            <h3 class="step-heading"><i class="fa-solid fa-receipt"></i> Order Summary</h3>
+            <div class="checkout-items-preview" id="checkoutItemsPreview">
+              <!-- Dynamically populated -->
+            </div>
+            <div class="checkout-totals-box">
+              <div class="summary-line">
+                <span>Items Subtotal</span>
+                <strong id="coSubtotal">₹0</strong>
+              </div>
+              <div class="summary-line" id="coDiscountLine" style="display: none;">
+                <span class="text-green">Coupon Discount</span>
+                <strong class="text-green" id="coDiscount">-₹0</strong>
+              </div>
+              <div class="summary-line">
+                <span>Shipping &amp; Handling</span>
+                <strong id="coShipping">₹0</strong>
+              </div>
+              <hr>
+              <div class="summary-line total-line">
+                <span>Grand Total</span>
+                <strong id="coGrandTotal">₹0</strong>
+              </div>
+            </div>
+
+            <div class="delivery-address-summary" id="delAddressSummary">
+              <!-- Shipping address preview -->
+            </div>
+
+            <div class="checkout-footer-buttons mt-3">
+              <button type="button" class="btn btn-secondary" onclick="backToCheckoutStep1()">
+                <i class="fa-solid fa-arrow-left"></i> Edit Details
+              </button>
+              <button type="button" class="btn btn-primary btn-lg" onclick="completeSimulatedOrder()">
+                <i class="fa-solid fa-check"></i> Place Simulated Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Order Confirmation Celebration Modal -->
+  <div class="modal-backdrop" id="confirmationBackdrop"></div>
+  <div class="modal-dialog order-confirmed-modal" id="orderConfirmedModal">
+    <div class="conf-celebration">
+      <img 
+        src="BabyCare_logo_design_concept_20261019115541.jpg" 
+        alt="BabyCare Official Logo" 
+        class="conf-logo-img"
+      >
+      <div class="conf-icon-wrapper">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h2>Hooray! Order Confirmed 🎉</h2>
+      <p class="conf-subtitle">Thank you for trusting BabyCare with your family's precious essentials.</p>
+    </div>
+
+    <div class="conf-card-details">
+      <div class="conf-info-grid">
+        <div class="conf-item">
+          <small>Order Number</small>
+          <strong id="confOrderId">BC-92841</strong>
+        </div>
+        <div class="conf-item">
+          <small>Estimated Delivery</small>
+          <strong id="confDeliveryDate">Tomorrow, by 5:00 PM</strong>
+        </div>
+        <div class="conf-item">
+          <small>Payment Mode</small>
+          <strong id="confPaymentMethod">Cash on Delivery</strong>
+        </div>
+        <div class="conf-item">
+          <small>Total Amount</small>
+          <strong id="confTotalAmount" class="text-pink">₹1,499</strong>
+        </div>
+      </div>
+
+      <div class="conf-shipping-box">
+        <h4><i class="fa-solid fa-house-chimney"></i> Delivering To:</h4>
+        <p id="confShippingAddress">Radhika Sharma, Flat 402, Sunshine Heights, Mumbai 400001</p>
+      </div>
+
+      <div class="order-tracker-stepper">
+        <div class="step-point done">
+          <div class="point-dot"><i class="fa-solid fa-check"></i></div>
+          <span>Order Placed</span>
+        </div>
+        <div class="step-line active"></div>
+        <div class="step-point active">
+          <div class="point-dot"><i class="fa-solid fa-box"></i></div>
+          <span>Packed</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-point">
+          <div class="point-dot"><i class="fa-solid fa-truck"></i></div>
+          <span>Shipped</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-point">
+          <div class="point-dot"><i class="fa-solid fa-house"></i></div>
+          <span>Delivered</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="conf-actions-row">
+      <button class="btn btn-secondary" onclick="viewMyOrdersAfterCheckout()">
+        <i class="fa-solid fa-receipt"></i> View in Order History
+      </button>
+      <button class="btn btn-primary" onclick="closeOrderConfirmationModal()">
+        <i class="fa-solid fa-bag-shopping"></i> Continue Shopping
+      </button>
+    </div>
+  </div>
+
+  <!-- 6. User Auth (Login & Register) Modal -->
+  <div class="modal-backdrop" id="authBackdrop" onclick="closeAuthModal()"></div>
+  <div class="modal-dialog auth-modal" id="authModal">
+    <button class="modal-close-btn" onclick="closeAuthModal()" aria-label="Close Authentication Modal">&times;</button>
+    
+    <div class="auth-header">
+      <div class="auth-logo-badge">
+        <img 
+          src="BabyCare_logo_design_concept_20261019115541.jpg" 
+          alt="BabyCare Official Logo" 
+          class="auth-logo-img"
+        >
+      </div>
+      <h2>Welcome to BabyCare</h2>
+      <p>Simulate sign-in to save your cart, wishlist, orders, and baby registry across reloads.</p>
+    </div>
+
+    <!-- Auth Tabs -->
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tabLoginBtn" onclick="switchAuthTab('login')">Sign In</button>
+      <button class="auth-tab" id="tabRegisterBtn" onclick="switchAuthTab('register')">New Parent Account</button>
+    </div>
+
+    <!-- Login Form -->
+    <form class="auth-form" id="loginForm" onsubmit="handleLoginSubmit(event)">
+      <div class="form-group">
+        <label for="loginEmail">Email Address</label>
+        <div class="input-with-icon">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="email" id="loginEmail" placeholder="e.g. parent@example.com" value="parent@babycare.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <div class="input-with-icon">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="loginPassword" placeholder="Enter your password" value="BabyCare2026!" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block btn-lg">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In to Account
+      </button>
+      <small class="auth-disclaimer">⚡ Demo Mode: Instant login with prefilled credentials or enter your own.</small>
+    </form>
+
+    <!-- Register Form -->
+    <form class="auth-form" id="registerForm" onsubmit="handleRegisterSubmit(event)" style="display: none;">
+      <div class="form-group">
+        <label for="regName">Parent Full Name</label>
+        <div class="input-with-icon">
+          <i class="fa-regular fa-user"></i>
+          <input type="text" id="regName" placeholder="e.g. Sneha Sharma" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email Address</label>
+        <div class="input-with-icon">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="email" id="regEmail" placeholder="sneha@example.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="regBabyStage">Parenting Stage</label>
+        <div class="select-wrapper">
+          <select id="regBabyStage">
+            <option value="Expecting Mom">Expecting Mom (Pregnant)</option>
+            <option value="Newborn Parent">Newborn (0-3 Months)</option>
+            <option value="Infant Parent">Infant (3-12 Months)</option>
+            <option value="Toddler Parent">Toddler (1-3 Years)</option>
+          </select>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="regPassword">Create Password</label>
+        <div class="input-with-icon">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="regPassword" placeholder="Minimum 6 characters" required minlength="6">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block btn-lg">
+        <i class="fa-solid fa-user-plus"></i> Create Account
+      </button>
+      <small class="auth-disclaimer">⚡ Demo Mode: User session is securely persisted in your browser's localStorage.</small>
+    </form>
+  </div>
+
+  <!-- 7. Order History Modal -->
+  <div class="modal-backdrop" id="ordersBackdrop" onclick="closeOrderHistoryModal()"></div>
+  <div class="modal-dialog orders-modal" id="ordersModal">
+    <button class="modal-close-btn" onclick="closeOrderHistoryModal()" aria-label="Close Order History">&times;</button>
+    <div class="modal-header-simple">
+      <i class="fa-solid fa-boxes-packing text-pink"></i>
+      <div>
+        <h3>My Order History</h3>
+        <small>Simulated orders saved on this device</small>
+      </div>
+    </div>
+    <div class="orders-list-body" id="ordersListBody">
+      <!-- Populated dynamically via script.js -->
+    </div>
+  </div>
+
+  <!-- 8. Simulated Order Tracking Modal -->
+  <div class="modal-backdrop" id="trackingBackdrop" onclick="closeOrderTrackingModal()"></div>
+  <div class="modal-dialog tracking-modal" id="trackingModal">
+    <button class="modal-close-btn" onclick="closeOrderTrackingModal()" aria-label="Close Order Tracking">&times;</button>
+    <div class="modal-header-simple">
+      <i class="fa-solid fa-truck-fast text-pink"></i>
+      <div>
+        <h3>Live Order Tracker</h3>
+        <small>Track your package across our simulated express delivery network</small>
+      </div>
+    </div>
+    
+    <div class="tracking-search-bar">
+      <input type="text" id="trackOrderInput" placeholder="Enter Order ID (e.g. BC-92841)">
+      <button class="btn btn-primary" onclick="trackOrderById()">Track Status</button>
+    </div>
+
+    <div class="tracking-result-box" id="trackingResultBox">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- 9. Baby Registry Modal -->
+  <div class="modal-backdrop" id="registryBackdrop" onclick="closeRegistryModal()"></div>
+  <div class="modal-dialog registry-modal" id="registryModal">
+    <button class="modal-close-btn" onclick="closeRegistryModal()" aria-label="Close Baby Registry">&times;</button>
+    <div class="registry-header-banner">
+      <div class="r-badge">Baby Shower &amp; Registry</div>
+      <h2>My BabyCare Registry</h2>
+      <p>Save desired essentials and track your baby milestone preparation.</p>
+    </div>
+
+    <div class="registry-stats-row">
+      <div class="r-metric">
+        <span class="val" id="regItemCount">0</span>
+        <span class="lbl">Items in Registry</span>
+      </div>
+      <div class="r-metric">
+        <span class="val" id="regTotalValue">₹0</span>
+        <span class="lbl">Total Wishlist Value</span>
+      </div>
+      <div class="r-actions-col">
+        <button class="btn btn-secondary btn-sm" onclick="copyRegistryLink()">
+          <i class="fa-regular fa-copy"></i> Copy Shareable Link
+        </button>
+      </div>
+    </div>
+
+    <div class="registry-items-list" id="registryItemsList">
+      <!-- Populated via script.js -->
+    </div>
+  </div>
+
+  <!-- 10. General Information / Policy Modal -->
+  <div class="modal-backdrop" id="infoBackdrop" onclick="closeInfoModal()"></div>
+  <div class="modal-dialog info-modal" id="infoModal">
+    <button class="modal-close-btn" onclick="closeInfoModal()" aria-label="Close Modal">&times;</button>
+    <div class="info-modal-content" id="infoModalContent">
+      <!-- Injected dynamically -->
+    </div>
+  </div>
+
+  <!-- Floating Toast Notification System -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Core JavaScript -->
+  <script src="script.js?v=2.2"></script>
+</body>
+</html>

@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BabyCare | Gentle Baby &amp; Maternity Essentials</title>
+<!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#ffdbce",
+            "secondary": "#90485a",
+            "surface-bright": "#fff8f6",
+            "on-background": "#2a170f",
+            "primary-fixed": "#ffd9dd",
+            "on-primary-fixed": "#400012",
+            "surface-container-low": "#fff1ec",
+            "on-primary": "#ffffff",
+            "outline": "#8c7073",
+            "surface": "#fff8f6",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#ffede7",
+            "tertiary-fixed-dim": "#d7c1c8",
+            "on-surface-variant": "#584143",
+            "inverse-surface": "#412b23",
+            "on-error-container": "#93000a",
+            "on-surface": "#2a170f",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#7a3749",
+            "on-tertiary": "#ffffff",
+            "on-primary-container": "#fffbff",
+            "secondary-fixed": "#ffd9df",
+            "primary-container": "#cf3f5f",
+            "primary": "#ad2448",
+            "tertiary-fixed": "#f4dce4",
+            "secondary-container": "#ffa5b9",
+            "on-tertiary-fixed-variant": "#524249",
+            "secondary-fixed-dim": "#ffb1c2",
+            "surface-variant": "#ffdbce",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#8f0634",
+            "tertiary": "#69575e",
+            "tertiary-container": "#827077",
+            "outline-variant": "#dfbfc1",
+            "surface-dim": "#f7d2c6",
+            "on-tertiary-container": "#fffbff",
+            "error": "#ba1a1a",
+            "surface-container": "#ffe9e2",
+            "on-secondary-fixed": "#3c0518",
+            "on-secondary-fixed-variant": "#733143",
+            "surface-container-high": "#ffe2d8",
+            "inverse-primary": "#ffb2bb",
+            "primary-fixed-dim": "#ffb2bb",
+            "background": "#fff8f6",
+            "surface-tint": "#b0274a",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#25181e"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "margin-mobile": "1.25rem",
+            "margin": "3rem"
+          },
+          "fontFamily": {
+            "label-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Outfit"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-hero": ["Outfit"],
+            "headline-lg": ["Outfit"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Outfit"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Outfit"],
+            "headline-md": ["Outfit"]
+          },
+          "fontSize": {
+            "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Ambient babycare warm soft shadows */
+    .shadow-warm-glow {
+      box-shadow: 0 4px 20px -2px rgba(244, 91, 122, 0.08), 0 2px 6px -1px rgba(56, 35, 27, 0.04);
+    }
+    .shadow-warm-hover {
+      box-shadow: 0 10px 28px -4px rgba(244, 91, 122, 0.16), 0 4px 12px -2px rgba(56, 35, 27, 0.06);
+    }
+    .shadow-warm-cta {
+      box-shadow: 0 6px 18px rgba(244, 91, 122, 0.32);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md selection:bg-secondary-container selection:text-on-secondary-container relative min-h-screen">
+<!-- 1. ANNOUNCEMENT BAR -->
+<aside aria-label="Announcement" class="bg-surface-container-high text-on-surface-variant text-label-md font-label-md py-2.5 px-4 text-center transition-all">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3">
+<span class="inline-flex items-center gap-1.5 font-semibold text-primary">
+<span class="material-symbols-outlined text-[18px]">local_florist</span>
+<span>Spring Baby Blossom Event: Enjoy 20% OFF sitewide with code</span>
+<button class="bg-surface-container-lowest px-2 py-0.5 rounded-full border border-secondary-container text-primary font-bold text-label-sm tracking-wider hover:bg-primary hover:text-on-primary transition-colors cursor-pointer ml-1 inline-flex items-center gap-1" onclick="copyPromo('HELLOBABY')">
+          HELLOBABY
+          <span class="material-symbols-outlined text-[13px]">content_copy</span>
+</button>
+</span>
+<span class="hidden md:inline text-outline-variant">|</span>
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">eco</span>
+        Free Carbon-Neutral Shipping on orders over $50
+      </span>
+</div>
+</aside>
+<!-- 2. TOP NAV BAR (Shared Component execution) -->
+<header class="bg-surface-bright dark:bg-inverse-surface docked full-width top-0 z-50 sticky shadow-[0_4px_20px_-2px_rgba(244,91,122,0.06),0_2px_6px_-1px_rgba(56,35,27,0.03)] transition-all">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
+<!-- Brand Logo & Quick Search Bar -->
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-2 group" href="#">
+<img alt="BabyCare" class="h-10 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1XuCPdD-EMVRmJXVYHpHXRy2PMVkMg4bvDjMXQNoXKyxhdUkoGf8zTTt0iIUGA6iABS6zEctXZIntp5_vkonFuwadm20SD4jhmqFcFQzQEVSk83IDwu2E3wxImZVSjSckhjVJ5nzxjkm5kddeEJ-QFNUpjCY9NsdgJNaUC541W5um0HIY3oxSamsUXDICwYjLh-VS-ogc7xSxA43sWrW0Usd6TBHr_nb52jBQJWAZSj8em_r-coye4unUYJ"/>
+</a>
+<!-- Desktop Search Bar -->
+<div class="hidden lg:flex items-center relative w-72">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest text-on-surface text-body-sm font-body-sm rounded-full border border-surface-container-highest focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-tertiary" id="headerSearchInput" onkeyup="handleGlobalSearch(event)" placeholder="Search swaddles, pacifiers..." type="text"/>
+</div>
+</div>
+<!-- Navigation Links (Exact from Shared Components JSON) -->
+<nav class="hidden md:flex items-center gap-6 lg:gap-8 text-label-lg font-label-lg">
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1" href="#shop" onclick="setActiveNav(this, 'all')">Newborn</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors pb-1" href="#shop" onclick="setActiveNav(this, 'clothing')">Clothing</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors pb-1" href="#shop" onclick="setActiveNav(this, 'nursery')">Nursery &amp; Gear</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors pb-1" href="#shop" onclick="setActiveNav(this, 'feeding')">Feeding &amp; Care</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors pb-1" href="#shop" onclick="setActiveNav(this, 'maternity')">Maternity</a>
+</nav>
+<!-- Trailing Actions (Cart, Wishlist, Profile) -->
+<div class="flex items-center gap-3 md:gap-4">
+<!-- Wishlist Button -->
+<button aria-label="Wishlist" class="relative p-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors rounded-full active:scale-95" onclick="toggleWishlistDrawer()">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+<span class="absolute top-1 right-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold w-4 h-4 rounded-full flex items-center justify-center" id="wishlistCountBadge">0</span>
+</button>
+<!-- Cart Button -->
+<button aria-label="Cart" class="flex items-center gap-2 bg-surface-container-low hover:bg-surface-container-highest p-2.5 md:px-4 md:py-2 rounded-full transition-transform duration-200 active:scale-95 border border-outline-variant/30" onclick="openCartDrawer()">
+<span class="relative">
+<span class="material-symbols-outlined text-primary text-[24px]">shopping_bag</span>
+<span class="absolute -top-1.5 -right-2 bg-primary text-on-primary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center" id="cartCountBadge">0</span>
+</span>
+<span class="hidden md:inline text-label-md font-label-md text-on-surface font-semibold">
+            Cart (<span id="cartCountText">0</span>)
+          </span>
+</button>
+<!-- Profile Avatar Link -->
+<a aria-label="Account" class="hidden sm:flex items-center p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors rounded-full active:scale-95" href="#profile">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</a>
+<!-- Mobile Menu Hamburger -->
+<button aria-label="Open Navigation Menu" class="md:hidden p-2 text-on-surface hover:text-primary rounded-full" onclick="toggleMobileNav()">
+<span class="material-symbols-outlined text-[26px]">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Drawer Navigation -->
+<div class="hidden md:hidden bg-surface-bright border-t border-surface-container-high px-6 py-4 flex-col gap-3" id="mobileNavMenu">
+<div class="relative w-full mb-2">
+<span class="material-symbols-outlined absolute left-3.5 top-2.5 text-outline text-[18px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest text-on-surface text-body-sm rounded-full border border-surface-container-highest outline-none focus:border-primary" onkeyup="handleGlobalSearch(event)" placeholder="Search newborn, nursing gear..." type="text"/>
+</div>
+<a class="py-2 text-primary font-bold" href="#shop" onclick="toggleMobileNav(); filterCategory('all')">Newborn</a>
+<a class="py-2 text-on-surface-variant hover:text-primary" href="#shop" onclick="toggleMobileNav(); filterCategory('clothing')">Clothing</a>
+<a class="py-2 text-on-surface-variant hover:text-primary" href="#shop" onclick="toggleMobileNav(); filterCategory('nursery')">Nursery &amp; Gear</a>
+<a class="py-2 text-on-surface-variant hover:text-primary" href="#shop" onclick="toggleMobileNav(); filterCategory('feeding')">Feeding &amp; Care</a>
+<a class="py-2 text-on-surface-variant hover:text-primary" href="#shop" onclick="toggleMobileNav(); filterCategory('maternity')">Maternity</a>
+</div>
+</header>
+<main>
+<!-- 3. HERO SECTION -->
+<section class="relative overflow-hidden pt-8 pb-16 lg:py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+<!-- Left Column: Copy & CTAs -->
+<div class="lg:col-span-6 flex flex-col items-start gap-6 z-10">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed/50 border border-secondary-fixed-dim text-on-secondary-fixed text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary fill-1">verified</span>
+            100% Certified Organic &amp; Hypoallergenic
+          </div>
+<h1 class="font-display-hero text-display-hero-mobile lg:text-display-hero text-on-surface tracking-tight">
+            Gentle on Little Skin, Made for <span class="text-primary italic">Loving Moments</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Thoughtfully crafted newborn essentials, butter-soft GOTS organic cotton sets, and soothing maternity comfort designed with pediatricians to nurture every sweet milestone.
+          </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-8 py-3.5 rounded-full shadow-warm-cta transition-transform duration-200 hover:-translate-y-0.5 active:scale-95" href="#shop">
+              Shop Spring Collection
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg px-7 py-3.5 rounded-full border border-secondary-container transition-all active:scale-95" href="#maternity" onclick="filterCategory('maternity')">
+              Explore Maternity Care
+            </a>
+</div>
+<!-- Trust Badges -->
+<div class="pt-6 border-t border-surface-container-high w-full grid grid-cols-3 gap-3 text-center sm:text-left">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">4.9 / 5</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">42,000+ Happy Parents</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">100% GOTS</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Non-Toxic Organic</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">0% Harsh</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">BPA &amp; Phthalate Free</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Hero Image with Soft Glow -->
+<div class="lg:col-span-6 relative">
+<div class="relative rounded-xl overflow-hidden shadow-warm-glow border border-surface-container-high bg-surface-container-lowest">
+<img alt="Smiling mother with happy baby resting on soft nursery blanket" class="w-full h-auto object-cover max-h-[580px] rounded-xl transform transition-transform duration-700 hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4EfzIIb-wA7_k_TnHiwD99ibRB4Ci4S0BjiG_Loen7XjS7E4stuVVQLVBai8QT2J62rpyg9BL--gpyHByjxGzcrY63NLgqTLM0TuIOH4fkOJspcdPYZtj86EWIC_773F07eVi4runFz3AAwtY0wuAnnKUgFXT7kUYcPLxxFqrtJvs-RAMiHZkNBb6LiKm7Utptgrt-E89P60f3-dYVCHIuSw_4MaqtSLdJmFUXWLLepomTH69Phij6g"/>
+<!-- Floating badge -->
+<div class="absolute bottom-6 left-6 right-6 sm:right-auto bg-surface-container-lowest/90 backdrop-blur-md p-4 rounded-lg border border-outline-variant/40 shadow-warm-hover flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface font-bold">New Season Softness</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Pure breathable textures made for restful naps</p>
+</div>
+</div>
+</div>
+<!-- Ambient floral glow blur -->
+<div class="absolute -top-10 -right-10 w-72 h-72 bg-secondary-container/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+<div class="absolute -bottom-10 -left-10 w-64 h-64 bg-surface-container-highest/60 rounded-full blur-2xl -z-10 pointer-events-none"></div>
+</div>
+</div>
+</section>
+<!-- 4. CATEGORIES QUICK-SHOP BROWSE -->
+<section class="py-12 bg-surface-container-low border-y border-surface-container-high">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<span class="text-primary font-label-sm text-label-sm tracking-wider uppercase">Tender Collections</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Explore by Category</h2>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm max-w-md">Everything you and your little miracle need, created with organic non-irritating fibers and loving craftsmanship.</p>
+</div>
+<!-- Category Cards Bento Slider -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+<button class="group flex flex-col items-center p-5 rounded-lg bg-surface-container-lowest hover:bg-surface border border-outline-variant/30 hover:border-primary transition-all duration-300 shadow-warm-glow text-center" onclick="filterCategory('all')">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-primary mb-3 group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined text-[28px]">child_care</span>
+</div>
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold group-hover:text-primary transition-colors">Newborn</span>
+<span class="text-label-sm font-label-sm text-tertiary">Swaddles &amp; Sets</span>
+</button>
+<button class="group flex flex-col items-center p-5 rounded-lg bg-surface-container-lowest hover:bg-surface border border-outline-variant/30 hover:border-primary transition-all duration-300 shadow-warm-glow text-center" onclick="filterCategory('clothing')">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-primary mb-3 group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined text-[28px]">checkroom</span>
+</div>
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold group-hover:text-primary transition-colors">Organic Clothing</span>
+<span class="text-label-sm font-label-sm text-tertiary">Ribbed Onesies</span>
+</button>
+<button class="group flex flex-col items-center p-5 rounded-lg bg-surface-container-lowest hover:bg-surface border border-outline-variant/30 hover:border-primary transition-all duration-300 shadow-warm-glow text-center" onclick="filterCategory('feeding')">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-primary mb-3 group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined text-[28px]">baby_changing_station</span>
+</div>
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold group-hover:text-primary transition-colors">Feeding &amp; Care</span>
+<span class="text-label-sm font-label-sm text-tertiary">Silicone &amp; Glass</span>
+</button>
+<button class="group flex flex-col items-center p-5 rounded-lg bg-surface-container-lowest hover:bg-surface border border-outline-variant/30 hover:border-primary transition-all duration-300 shadow-warm-glow text-center" onclick="filterCategory('nursery')">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-primary mb-3 group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined text-[28px]">crib</span>
+</div>
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold group-hover:text-primary transition-colors">Nursery &amp; Gear</span>
+<span class="text-label-sm font-label-sm text-tertiary">Mobiles &amp; Linens</span>
+</button>
+<button class="group flex flex-col items-center p-5 rounded-lg bg-surface-container-lowest hover:bg-surface border border-outline-variant/30 hover:border-primary transition-all duration-300 shadow-warm-glow text-center col-span-2 sm:col-span-1" onclick="filterCategory('maternity')">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-primary mb-3 group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined text-[28px]">pregnant_woman</span>
+</div>
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold group-hover:text-primary transition-colors">Maternity Comfort</span>
+<span class="text-label-sm font-label-sm text-tertiary">Robes &amp; Loungewear</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 5. BEST SELLERS & INTERACTIVE PRODUCT GRID -->
+<section class="py-16 lg:py-24 max-w-7xl mx-auto px-6 lg:px-12" id="shop">
+<!-- Grid Header & Filters -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-10">
+<div>
+<span class="text-primary font-label-sm text-label-sm tracking-wider uppercase">Parent Favorites</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Curated Essentials for Baby &amp; Mom</h2>
+</div>
+<!-- Filter Pill Chips -->
+<div class="flex flex-wrap items-center gap-2">
+<button class="filter-chip active-filter px-5 py-2 rounded-full font-label-md text-label-md bg-secondary-fixed text-primary font-bold border border-secondary-fixed-dim transition-all" id="btn-filter-all" onclick="filterCategory('all')">
+            All Products
+          </button>
+<button class="filter-chip px-5 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant border border-outline-variant/40 hover:border-primary transition-all" id="btn-filter-clothing" onclick="filterCategory('clothing')">
+            Clothing
+          </button>
+<button class="filter-chip px-5 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant border border-outline-variant/40 hover:border-primary transition-all" id="btn-filter-feeding" onclick="filterCategory('feeding')">
+            Feeding &amp; Care
+          </button>
+<button class="filter-chip px-5 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant border border-outline-variant/40 hover:border-primary transition-all" id="btn-filter-nursery" onclick="filterCategory('nursery')">
+            Nursery &amp; Gear
+          </button>
+<button class="filter-chip px-5 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant border border-outline-variant/40 hover:border-primary transition-all" id="btn-filter-maternity" onclick="filterCategory('maternity')">
+            Maternity
+          </button>
+</div>
+</div>
+<!-- Live Search Notice (Dynamic) -->
+<div class="hidden mb-6 p-4 rounded-lg bg-surface-container-low border border-secondary-container flex items-center justify-between" id="searchNotice">
+<span class="text-body-sm font-body-sm text-on-surface">Showing results for: <b class="text-primary font-bold" id="searchKeyword"></b></span>
+<button class="text-label-sm font-label-sm text-primary hover:underline" onclick="resetSearch()">Clear Search</button>
+</div>
+<!-- Product Grid Container -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="productGrid">
+<!-- Product 1: Ribbed Sleeper Onesie -->
+<article class="product-card group bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/20 shadow-warm-glow hover:shadow-warm-hover transition-all duration-300 flex flex-col justify-between" data-category="clothing" data-title="PureComfort Organic Cotton Ribbed Sleeper Onesie">
+<div>
+<div class="relative rounded-lg overflow-hidden bg-surface-container-low aspect-square mb-4">
+<img alt="Folded baby ribbed cotton sleeper onesie on cozy knitted blanket with wooden rattle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDpGvWHfxIaLyron7u3Po8Vf06CrStl-VL5i35qMqUBoAvX0iHHI5m2PjDF7Sq6RFxiv9V8Ry2DjSkYnDGQz_vcezOjZPC2TvGMRMnF3m6xJu-wfN3uqhIhraFTrsWuSkjMirDPTBS9x60HMvduBN6W_taOLOAbA5koIXO1DAAx_AFVXKmw2FT7G63GUbE16YPgl6ToBOZyYLqWOpx7h0MLwEixBgc3H-zFlxxKOKhWf6t7tUf64lc3w"/>
+<span class="absolute top-3 left-3 bg-secondary-fixed text-primary font-bold text-label-sm font-label-sm px-3 py-1 rounded-full shadow-sm">
+                Best Seller
+              </span>
+<button aria-label="Add to wishlist" class="wishlist-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 backdrop-blur-sm text-on-surface-variant hover:text-primary flex items-center justify-center transition-all duration-200" onclick="toggleWishlist(1, this)">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<button class="absolute bottom-3 inset-x-3 py-2 bg-surface-container-lowest/95 backdrop-blur text-on-surface hover:text-primary font-label-md text-label-md rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-200 text-center" onclick="openQuickView(1)">
+                Quick View
+              </button>
+</div>
+<div class="flex items-center gap-1.5 text-primary mb-1.5">
+<div class="flex text-[16px]">
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+</div>
+<span class="text-on-surface-variant text-label-sm font-label-sm">(324 reviews)</span>
+</div>
+<span class="text-tertiary text-label-sm font-label-sm block mb-1">Organic Baby Clothing</span>
+<h3 class="font-headline-sm text-[18px] text-on-surface font-semibold group-hover:text-primary transition-colors line-clamp-1">
+              PureComfort Organic Cotton Ribbed Sleeper Onesie
+            </h3>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container-high flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$34.00</span>
+<span class="text-tertiary line-through text-body-sm font-body-sm ml-1.5">$42.00</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary text-on-primary hover:bg-primary-container rounded-full shadow-warm-cta active:scale-95 transition-all" onclick="addToCart(1)">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</article>
+<!-- Product 2: Silicone Suction Plate & Bottle -->
+<article class="product-card group bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/20 shadow-warm-glow hover:shadow-warm-hover transition-all duration-300 flex flex-col justify-between" data-category="feeding" data-title="Modern Silicone Suction Plate &amp; Anti-Colic Bottle Set">
+<div>
+<div class="relative rounded-lg overflow-hidden bg-surface-container-low aspect-square mb-4">
+<img alt="Silicone partitioned baby feeding plate with wooden spoon and gentle anti-colic feeding bottle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD-sB2QGTbe4mqW0bK74p3gfA4-CJ_FiFvjbUTAkjXEBcirJcT8JPT3CX8qQ2tFnSxAYFqoD6dm9uugdHU3HORyYgHAt16I2ywqjDkIadEgwtdv79UYkkQ--khRpMcmpKwKY-Mqey7QZii06NWAacKyOGj_W3xfXVgO_6mwC1V-SyNgfN4Oi65n1x67_9wYJMStSsA9uKZQK4RL9A67LZ4hYqtsTcdKqn90KK4EWhEgA9H-Ei4wGv_3Q"/>
+<span class="absolute top-3 left-3 bg-primary-fixed text-on-primary-fixed font-bold text-label-sm font-label-sm px-3 py-1 rounded-full shadow-sm">
+                Staff Pick
+              </span>
+<button aria-label="Add to wishlist" class="wishlist-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 backdrop-blur-sm text-on-surface-variant hover:text-primary flex items-center justify-center transition-all duration-200" onclick="toggleWishlist(2, this)">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<button class="absolute bottom-3 inset-x-3 py-2 bg-surface-container-lowest/95 backdrop-blur text-on-surface hover:text-primary font-label-md text-label-md rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-200 text-center" onclick="openQuickView(2)">
+                Quick View
+              </button>
+</div>
+<div class="flex items-center gap-1.5 text-primary mb-1.5">
+<div class="flex text-[16px]">
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+</div>
+<span class="text-on-surface-variant text-label-sm font-label-sm">(189 reviews)</span>
+</div>
+<span class="text-tertiary text-label-sm font-label-sm block mb-1">Feeding &amp; Teething</span>
+<h3 class="font-headline-sm text-[18px] text-on-surface font-semibold group-hover:text-primary transition-colors line-clamp-1">
+              Modern Silicone Suction Plate &amp; Anti-Colic Bottle Set
+            </h3>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container-high flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$28.50</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary text-on-primary hover:bg-primary-container rounded-full shadow-warm-cta active:scale-95 transition-all" onclick="addToCart(2)">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</article>
+<!-- Product 3: Cloud & Sleeping Stars Crib Mobile -->
+<article class="product-card group bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/20 shadow-warm-glow hover:shadow-warm-hover transition-all duration-300 flex flex-col justify-between" data-category="nursery" data-title="Cloud &amp; Sleeping Stars Natural Oak Crib Mobile">
+<div>
+<div class="relative rounded-lg overflow-hidden bg-surface-container-low aspect-square mb-4">
+<img alt="Handcrafted wooden crib mobile with soft felt clouds and stars suspended over a cozy natural oak baby crib" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCARlOVESMf-K8-hrwqR0hCs2yPzk5EAbMw9TTsdSs-FqlIAS0gwzm6Qv5XrPFirTg0xcMq-WRnhjCOJqr8Nf89SOx4uISxIAe-hn0jeHEjmShSH6PHQ4JouidnX5baBde6i02i6YlEmSX1aw8WOc-QJjTS_apRMxy9ACgfy-doXq7uBM2efMwrGNWXoLgNGe3uqtxJOJzm-MQxX0nqIKx7iPePu0tSkeeDZkl7d8VOICPJ8GmizaekOw"/>
+<span class="absolute top-3 left-3 bg-secondary-fixed text-primary font-bold text-label-sm font-label-sm px-3 py-1 rounded-full shadow-sm">
+                New Arrival
+              </span>
+<button aria-label="Add to wishlist" class="wishlist-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 backdrop-blur-sm text-on-surface-variant hover:text-primary flex items-center justify-center transition-all duration-200" onclick="toggleWishlist(3, this)">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<button class="absolute bottom-3 inset-x-3 py-2 bg-surface-container-lowest/95 backdrop-blur text-on-surface hover:text-primary font-label-md text-label-md rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-200 text-center" onclick="openQuickView(3)">
+                Quick View
+              </button>
+</div>
+<div class="flex items-center gap-1.5 text-primary mb-1.5">
+<div class="flex text-[16px]">
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+</div>
+<span class="text-on-surface-variant text-label-sm font-label-sm">(98 reviews)</span>
+</div>
+<span class="text-tertiary text-label-sm font-label-sm block mb-1">Nursery Decor &amp; Sleep</span>
+<h3 class="font-headline-sm text-[18px] text-on-surface font-semibold group-hover:text-primary transition-colors line-clamp-1">
+              Cloud &amp; Sleeping Stars Natural Oak Crib Mobile
+            </h3>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container-high flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$48.00</span>
+<span class="text-tertiary line-through text-body-sm font-body-sm ml-1.5">$56.00</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary text-on-primary hover:bg-primary-container rounded-full shadow-warm-cta active:scale-95 transition-all" onclick="addToCart(3)">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</article>
+<!-- Product 4: Serene Modal Nursing Lounge Set -->
+<article class="product-card group bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/20 shadow-warm-glow hover:shadow-warm-hover transition-all duration-300 flex flex-col justify-between" data-category="maternity" data-title="Serene Modal Nursing Lounge Set &amp; Wrap Robe">
+<div>
+<div class="relative rounded-lg overflow-hidden bg-surface-container-low aspect-square mb-4">
+<img alt="Luxurious dusty rose modal maternity nursing robe and soft lounge pajama set laid gently on fresh linen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJUQXgc6CSCZ-VmqtBP9dD-q1IulonOPCsV-LUJw3Fc17pisJcDWJh8pk41vhNNT8VuQ70izG6P9LJy20n-Ap6nXX3mbp17D6t0qJ7T4x2K2_hxjZF7-Lqe8PeEPtXZa-TZUw2h_cuV-Ub4jyeRR5aRwMNYTJsv3t82aTWwxZK_AOrAF1B5OAmsJOoyXqjH8YcIQWtU2Nf7o0xOGue1MpXSv2Ut9H7tEV5JdMuijk7Px2ePQs4RTFO4Q"/>
+<span class="absolute top-3 left-3 bg-surface-container-high text-on-surface font-bold text-label-sm font-label-sm px-3 py-1 rounded-full shadow-sm">
+                Maternity Favorite
+              </span>
+<button aria-label="Add to wishlist" class="wishlist-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 backdrop-blur-sm text-on-surface-variant hover:text-primary flex items-center justify-center transition-all duration-200" onclick="toggleWishlist(4, this)">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<button class="absolute bottom-3 inset-x-3 py-2 bg-surface-container-lowest/95 backdrop-blur text-on-surface hover:text-primary font-label-md text-label-md rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-200 text-center" onclick="openQuickView(4)">
+                Quick View
+              </button>
+</div>
+<div class="flex items-center gap-1.5 text-primary mb-1.5">
+<div class="flex text-[16px]">
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[16px]">star</span>
+</div>
+<span class="text-on-surface-variant text-label-sm font-label-sm">(412 reviews)</span>
+</div>
+<span class="text-tertiary text-label-sm font-label-sm block mb-1">Maternity Comfort</span>
+<h3 class="font-headline-sm text-[18px] text-on-surface font-semibold group-hover:text-primary transition-colors line-clamp-1">
+              Serene Modal Nursing Lounge Set &amp; Wrap Robe
+            </h3>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container-high flex items-center justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">$68.00</span>
+</div>
+<button aria-label="Add to cart" class="p-3 bg-primary text-on-primary hover:bg-primary-container rounded-full shadow-warm-cta active:scale-95 transition-all" onclick="addToCart(4)">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- 6. PROMOTIONAL BLAZING BANNER (Dream Nursery Starter) -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 mb-16 lg:mb-24">
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-surface-container-high via-surface-container to-secondary-container p-8 lg:p-14 border border-outline-variant/30 shadow-warm-glow">
+<div class="relative z-10 max-w-2xl flex flex-col items-start gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest text-primary text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+            Special Parent Bundle Offer
+          </div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold">
+            Bundle &amp; Save 25% — Build Your Dream Nursery Starter Kit
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Select any crib mobile, two ribbed organic sleepsuits, and a silicone feeding essential kit. Apply voucher to receive your gift box packaging with complimentary organic lavender washcloths.
+          </p>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<button class="inline-flex items-center gap-2 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-7 py-3 rounded-full shadow-warm-cta active:scale-95 transition-all" onclick="copyPromo('HELLOBABY')">
+<span>Apply Code: HELLOBABY</span>
+<span class="material-symbols-outlined text-[18px]">redeem</span>
+</button>
+<a class="text-on-surface hover:text-primary font-label-md text-label-md underline underline-offset-4 py-2" href="#shop">
+              Browse starter bundles →
+            </a>
+</div>
+</div>
+<!-- Ambient decorative shapes -->
+<div class="absolute -right-12 -bottom-12 w-64 h-64 bg-primary-fixed/40 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute right-12 top-6 hidden lg:flex items-center justify-center opacity-80 pointer-events-none">
+<span class="material-symbols-outlined text-[140px] text-primary/10">flutter_dash</span>
+</div>
+</div>
+</section>
+<!-- 7. PARENT-LOVED PERKS & CLINICAL VALUES -->
+<section class="py-16 bg-surface-container-low border-y border-surface-container-high">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-primary font-label-sm text-label-sm tracking-wider uppercase">Uncompromising Standards</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-1">Why Doctors &amp; Parents Trust BabyCare</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/30 shadow-warm-glow flex flex-col items-start">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[26px]">spa</span>
+</div>
+<h3 class="font-headline-sm text-[18px] text-on-surface font-semibold mb-2">100% GOTS Organic</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Hypoallergenic, ultra-breathable fibers safe for delicate baby skin prone to eczema or irritation. Zero harmful pesticides.
+            </p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/30 shadow-warm-glow flex flex-col items-start">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[26px]">health_and_safety</span>
+</div>
+<h3 class="font-headline-sm text-[18px] text-on-surface font-semibold mb-2">Pediatrician Approved</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Every anti-colic teat, teether contour, and swaddle neckline is vetted by certified pediatricians and lactation consultants.
+            </p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/30 shadow-warm-glow flex flex-col items-start">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[26px]">bedtime</span>
+</div>
+<h3 class="font-headline-sm text-[18px] text-on-surface font-semibold mb-2">30-Day Sleep Guarantee</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Try our swaddles, sleepers, or crib mobiles for a full month. If you or your infant do not rest more soundly, returns are free.
+            </p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/30 shadow-warm-glow flex flex-col items-start">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[26px]">recycling</span>
+</div>
+<h3 class="font-headline-sm text-[18px] text-on-surface font-semibold mb-2">Plastic-Free Delivery</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              100% compostable mailers and FSC-certified soy-printed boxes. Carbon-neutral fulfillment for their greener future.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. VERIFIED CUSTOMER TESTIMONIALS -->
+<section class="py-16 lg:py-24 max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<div>
+<span class="text-primary font-label-sm text-label-sm tracking-wider uppercase">Tender Words</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Loved by 42,000+ Caregivers</h2>
+</div>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined fill-1 text-[20px]">star</span>
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">4.9 Overall Rating</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-warm-glow flex flex-col justify-between">
+<div>
+<div class="flex text-primary mb-3">
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+</div>
+<p class="font-headline-sm text-[18px] text-on-surface font-semibold mb-2">“The only onesies that don't irritate her eczema”</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              The cotton quality is noticeably superior to high-street brands. The two-way zip made 3 AM diaper changes completely peaceful without waking her up.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container-high flex items-center justify-between">
+<div>
+<p class="text-label-md font-label-md text-on-surface font-bold">Claire S.</p>
+<p class="text-label-sm font-label-sm text-tertiary">Mother of 4-month-old Isla</p>
+</div>
+<span class="text-label-sm font-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] fill-1">verified</span> Verified
+            </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-warm-glow flex flex-col justify-between">
+<div>
+<div class="flex text-primary mb-3">
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+</div>
+<p class="font-headline-sm text-[18px] text-on-surface font-semibold mb-2">“The modal maternity robe saved my hospital stay”</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              So soothing against my sensitive skin after delivery. It is breathable, elegant, and the snaps for nursing are discreet and effortless.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container-high flex items-center justify-between">
+<div>
+<p class="text-label-md font-label-md text-on-surface font-bold">Elena R.</p>
+<p class="text-label-sm font-label-sm text-tertiary">First-time mom</p>
+</div>
+<span class="text-label-sm font-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] fill-1">verified</span> Verified
+            </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/30 shadow-warm-glow flex flex-col justify-between">
+<div>
+<div class="flex text-primary mb-3">
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+<span class="material-symbols-outlined fill-1 text-[18px]">star</span>
+</div>
+<p class="font-headline-sm text-[18px] text-on-surface font-semibold mb-2">“The suction plate actually stays anchored!”</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              We tried three other brands that our toddler flung across the floor. This one holds fast and washes clean in seconds. Worth every single penny.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container-high flex items-center justify-between">
+<div>
+<p class="text-label-md font-label-md text-on-surface font-bold">Marcus &amp; Tina W.</p>
+<p class="text-label-sm font-label-sm text-tertiary">Parents of 9-month-old Leo</p>
+</div>
+<span class="text-label-sm font-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] fill-1">verified</span> Verified
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- 11. NEWSLETTER & VIP CLUB -->
+<section class="bg-surface-container-low border-t border-surface-container-high py-16">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<div class="w-14 h-14 rounded-full bg-secondary-fixed text-primary mx-auto flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[28px]">mark_email_read</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-bold">
+          Join The BabyCare Nest
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mt-2 mb-8">
+          Get 15% off your first order plus our weekly newborn sleep &amp; feeding milestone guide, written in collaboration with certified pediatricians.
+        </p>
+<form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3" onsubmit="handleNewsletter(event)">
+<input class="flex-1 px-5 py-3.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 focus:border-primary focus:ring-2 focus:ring-primary/20 text-on-surface outline-none" id="newsletterEmail" placeholder="Enter your email address" required="" type="email"/>
+<button class="px-8 py-3.5 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-full shadow-warm-cta active:scale-95 transition-all" type="submit">
+            Join Nest
+          </button>
+</form>
+<p class="text-label-sm font-label-sm text-tertiary mt-3">We cherish your privacy. Unsubscribe at any time with one click.</p>
+</div>
+</section>
+</main>
+<!-- 12. FOOTER (Shared Component execution) -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface full-width">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 flex flex-col gap-10">
+<!-- Top row: Brand & Reassurance statement -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-surface-container dark:border-surface-container-high">
+<div>
+<a class="inline-block mb-2" href="#">
+<img alt="BabyCare" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/AEtjO1XuCPdD-EMVRmJXVYHpHXRy2PMVkMg4bvDjMXQNoXKyxhdUkoGf8zTTt0iIUGA6iABS6zEctXZIntp5_vkonFuwadm20SD4jhmqFcFQzQEVSk83IDwu2E3wxImZVSjSckhjVJ5nzxjkm5kddeEJ-QFNUpjCY9NsdgJNaUC541W5um0HIY3oxSamsUXDICwYjLh-VS-ogc7xSxA43sWrW0Usd6TBHr_nb52jBQJWAZSj8em_r-coye4unUYJ"/>
+</a>
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-tertiary-fixed-dim max-w-md">
+            Tender, non-toxic baby essentials and soothing maternity care. Handcrafted to bring calm and joy to the early years of parenthood.
+          </p>
+</div>
+<!-- Social Icons -->
+<div class="flex items-center gap-3">
+<a aria-label="Instagram" class="w-10 h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface-variant flex items-center justify-center transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</a>
+<a aria-label="Pinterest" class="w-10 h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface-variant flex items-center justify-center transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">brush</span>
+</a>
+<a aria-label="Support Email" class="w-10 h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface-variant flex items-center justify-center transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</a>
+</div>
+</div>
+<!-- Links Grid from JSON -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-8 text-label-md font-label-md">
+<div class="flex flex-col gap-3">
+<span class="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary text-[16px] font-bold">About &amp; Mission</span>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Organic Sourcing</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Pediatrician Advisory</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary text-[16px] font-bold">Customer Care</span>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Sleep Guarantee</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Contact &amp; FAQs</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary text-[16px] font-bold">Legal &amp; Standards</span>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Accessibility</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary text-[16px] font-bold">Safe Payments</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Encrypted 256-bit SSL transaction security.</p>
+<div class="flex flex-wrap gap-2 pt-1 text-tertiary">
+<span class="px-2.5 py-1 bg-surface-container rounded-md text-label-sm font-bold">VISA</span>
+<span class="px-2.5 py-1 bg-surface-container rounded-md text-label-sm font-bold">MC</span>
+<span class="px-2.5 py-1 bg-surface-container rounded-md text-label-sm font-bold">AMEX</span>
+<span class="px-2.5 py-1 bg-surface-container rounded-md text-label-sm font-bold">Apple Pay</span>
+</div>
+</div>
+</div>
+<!-- Copyright row (Exact string from Shared Components JSON) -->
+<div class="pt-8 border-t border-surface-container dark:border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-4 text-body-sm font-body-sm text-on-surface-variant dark:text-tertiary-fixed-dim">
+<p>© 2025 BabyCare Essentials Inc. Tender care for parents &amp; newborns. All rights reserved.</p>
+<p class="text-label-sm font-label-sm text-tertiary">Designed for peaceful slumbers &amp; joyful feeding</p>
+</div>
+</div>
+</footer>
+<!-- 9. INTERACTIVE QUICK VIEW MODAL -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-inverse-surface/40 backdrop-blur-sm transition-opacity" id="quickViewModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-3xl w-full p-6 md:p-8 shadow-warm-hover relative max-h-[90vh] overflow-y-auto">
+<button aria-label="Close modal" class="absolute top-4 right-4 p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container-low transition-colors" onclick="closeQuickView()">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<!-- Image display -->
+<div class="rounded-lg overflow-hidden bg-surface-container-low aspect-square">
+<img alt="Product View" class="w-full h-full object-cover" id="modalProductImg" src=""/>
+</div>
+<!-- Info & Controls -->
+<div class="flex flex-col gap-4">
+<div>
+<span class="inline-block bg-secondary-fixed text-primary font-bold text-label-sm px-2.5 py-0.5 rounded-full mb-1" id="modalProductBadge">Badge</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="modalProductTitle">Product Title</h3>
+<p class="font-headline-sm text-[22px] text-primary font-bold mt-1" id="modalProductPrice">$0.00</p>
+</div>
+<!-- Size Selector -->
+<div id="modalSizeGroup">
+<span class="text-label-sm font-label-sm text-on-surface font-semibold block mb-2">Select Size:</span>
+<div class="flex flex-wrap gap-2" id="sizeOptions">
+<button class="size-pill active-size px-3.5 py-1.5 rounded-full text-label-sm border border-primary bg-primary text-on-primary" onclick="selectSize(this)">0-3 Months</button>
+<button class="size-pill px-3.5 py-1.5 rounded-full text-label-sm border border-outline-variant text-on-surface hover:border-primary" onclick="selectSize(this)">3-6 Months</button>
+<button class="size-pill px-3.5 py-1.5 rounded-full text-label-sm border border-outline-variant text-on-surface hover:border-primary" onclick="selectSize(this)">6-12 Months</button>
+</div>
+</div>
+<!-- Quantity Selector (as specified in Style Guidance) -->
+<div>
+<span class="text-label-sm font-label-sm text-on-surface font-semibold block mb-2">Quantity:</span>
+<div class="inline-flex items-center rounded-full border border-secondary-container bg-surface-container-lowest p-1">
+<button aria-label="Decrease quantity" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="adjustModalQty(-1)">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-headline-sm text-headline-sm text-on-surface px-4" id="modalQtyDisplay">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="adjustModalQty(1)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- Add CTA -->
+<div class="pt-4 border-t border-surface-container-high flex gap-3">
+<button class="flex-1 py-3.5 bg-primary hover:bg-primary-container text-on-primary font-label-lg rounded-full shadow-warm-cta transition-transform duration-200 active:scale-95 flex items-center justify-center gap-2" id="modalAddToCartBtn" onclick="addModalItemToCart()">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+              Add To Cart
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 10. INTERACTIVE SLIDE-OVER CART DRAWER -->
+<div class="fixed inset-0 z-50 hidden" id="cartDrawer">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm transition-opacity" onclick="closeCartDrawer()"></div>
+<!-- Drawer Panel -->
+<div class="absolute inset-y-0 right-0 max-w-md w-full bg-surface-container-lowest shadow-2xl flex flex-col justify-between transform transition-transform duration-300">
+<!-- Drawer Header -->
+<div class="p-6 border-b border-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">shopping_bag</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Your Nest Basket</h2>
+</div>
+<button aria-label="Close cart drawer" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container-low transition-colors" onclick="closeCartDrawer()">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Free Shipping Progress -->
+<div class="px-6 py-3 bg-surface-container-low border-b border-surface-container-high">
+<div class="flex justify-between text-label-sm font-label-sm mb-1.5">
+<span class="text-on-surface-variant font-medium" id="shippingNotice">Add $50.00 for Free Shipping</span>
+<span class="text-primary font-bold" id="shippingPercent">0%</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full transition-all duration-300" id="shippingProgressBar" style="width: 0%"></div>
+</div>
+</div>
+<!-- Line Items List -->
+<div class="flex-1 overflow-y-auto p-6 space-y-4" id="cartItemList">
+<!-- Dynamic items injected here via JS -->
+</div>
+<!-- Drawer Footer with Promo & Totals -->
+<div class="p-6 border-t border-surface-container-high bg-surface-bright space-y-4">
+<!-- Promo Voucher Input -->
+<div class="flex gap-2">
+<input class="flex-1 px-4 py-2 text-body-sm font-body-sm rounded-full bg-surface-container-lowest border border-outline-variant/40 outline-none uppercase text-on-surface focus:border-primary" id="promoInput" placeholder="Promo code (e.g. HELLOBABY)" type="text"/>
+<button class="px-5 py-2 bg-surface-container text-on-surface hover:text-primary font-label-md rounded-full border border-secondary-container transition-colors" onclick="applyPromoCode()">
+            Apply
+          </button>
+</div>
+<!-- Price Breakdown -->
+<div class="space-y-1.5 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex justify-between">
+<span>Subtotal</span>
+<span class="text-on-surface font-semibold" id="cartSubtotal">$0.00</span>
+</div>
+<div class="hidden flex justify-between text-primary font-medium" id="discountRow">
+<span>Special Spring Savings (20%)</span>
+<span id="cartDiscount">-$0.00</span>
+</div>
+<div class="flex justify-between">
+<span>Estimated Shipping</span>
+<span class="text-on-surface" id="cartShipping">$5.00</span>
+</div>
+<div class="flex justify-between pt-2 border-t border-surface-container-high text-headline-sm text-headline-sm font-bold text-on-surface">
+<span>Total</span>
+<span class="text-primary" id="cartTotal">$0.00</span>
+</div>
+</div>
+<!-- Checkout Action -->
+<button class="w-full py-4 bg-primary hover:bg-primary-container text-on-primary font-label-lg rounded-full shadow-warm-cta active:scale-95 transition-all flex items-center justify-center gap-2" onclick="triggerDemoCheckout()">
+<span>Proceed to Safe Checkout</span>
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CHECKOUT SUCCESS MODAL (Demo Flow) -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-inverse-surface/40 backdrop-blur-sm" id="checkoutSuccessModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-md w-full p-8 text-center shadow-warm-hover border border-secondary-container">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed text-primary mx-auto flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[36px] fill-1">check_circle</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Order Received with Love!</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 mb-6">
+        Thank you for trusting BabyCare. A confirmation and tracking guide have been dispatched to your email. Your nursery care package is being prepared with pure gentle care.
+      </p>
+<button class="w-full py-3.5 bg-primary text-on-primary font-label-lg rounded-full shadow-warm-cta" onclick="closeCheckoutSuccess()">
+        Continue Browsing
+      </button>
+</div>
+</div>
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 bg-inverse-surface text-inverse-on-surface px-5 py-3 rounded-full shadow-warm-hover flex items-center gap-3" id="toastNotification">
+<span class="material-symbols-outlined text-secondary-container text-[20px]" id="toastIcon">check_circle</span>
+<span class="text-label-md font-label-md" id="toastMessage">Item added to your basket</span>
+</div>
+<!-- APPLICATION DATA & INTERACTIVE JAVASCRIPT LOGIC -->
+<script>
+    // Product Catalog Database
+    const productsDB = [
+      {
+        id: 1,
+        title: "PureComfort Organic Cotton Ribbed Sleeper Onesie",
+        price: 34.00,
+        originalPrice: 42.00,
+        badge: "Best Seller",
+        category: "clothing",
+        rating: 5,
+        reviews: 324,
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCDpGvWHfxIaLyron7u3Po8Vf06CrStl-VL5i35qMqUBoAvX0iHHI5m2PjDF7Sq6RFxiv9V8Ry2DjSkYnDGQz_vcezOjZPC2TvGMRMnF3m6xJu-wfN3uqhIhraFTrsWuSkjMirDPTBS9x60HMvduBN6W_taOLOAbA5koIXO1DAAx_AFVXKmw2FT7G63GUbE16YPgl6ToBOZyYLqWOpx7h0MLwEixBgc3H-zFlxxKOKhWf6t7tUf64lc3w",
+        description: "Crafted from 100% GOTS certified organic ribbed cotton. Features gentle fold-over scratch mittens for newborns and smooth two-way ankle-to-chin safety zipper."
+      },
+      {
+        id: 2,
+        title: "Modern Silicone Suction Plate & Anti-Colic Bottle Set",
+        price: 28.50,
+        originalPrice: null,
+        badge: "Staff Pick",
+        category: "feeding",
+        rating: 5,
+        reviews: 189,
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAD-sB2QGTbe4mqW0bK74p3gfA4-CJ_FiFvjbUTAkjXEBcirJcT8JPT3CX8qQ2tFnSxAYFqoD6dm9uugdHU3HORyYgHAt16I2ywqjDkIadEgwtdv79UYkkQ--khRpMcmpKwKY-Mqey7QZii06NWAacKyOGj_W3xfXVgO_6mwC1V-SyNgfN4Oi65n1x67_9wYJMStSsA9uKZQK4RL9A67LZ4hYqtsTcdKqn90KK4EWhEgA9H-Ei4wGv_3Q",
+        description: "100% food-grade silicone suction base that stays anchored to any high chair tray. Paired with ergonomic beechwood soft-spoon and anti-colic vented glass feeder."
+      },
+      {
+        id: 3,
+        title: "Cloud & Sleeping Stars Natural Oak Crib Mobile",
+        price: 48.00,
+        originalPrice: 56.00,
+        badge: "New Arrival",
+        category: "nursery",
+        rating: 5,
+        reviews: 98,
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCARlOVESMf-K8-hrwqR0hCs2yPzk5EAbMw9TTsdSs-FqlIAS0gwzm6Qv5XrPFirTg0xcMq-WRnhjCOJqr8Nf89SOx4uISxIAe-hn0jeHEjmShSH6PHQ4JouidnX5baBde6i02i6YlEmSX1aw8WOc-QJjTS_apRMxy9ACgfy-doXq7uBM2efMwrGNWXoLgNGe3uqtxJOJzm-MQxX0nqIKx7iPePu0tSkeeDZkl7d8VOICPJ8GmizaekOw",
+        description: "Gentle natural oak hoop suspending artisanal needle-felted clouds, crescent moon, and pastel stars. Designed to stimulate newborn focal tracking and promote calm sleep."
+      },
+      {
+        id: 4,
+        title: "Serene Modal Nursing Lounge Set & Wrap Robe",
+        price: 68.00,
+        originalPrice: null,
+        badge: "Maternity Favorite",
+        category: "maternity",
+        rating: 5,
+        reviews: 412,
+        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDJUQXgc6CSCZ-VmqtBP9dD-q1IulonOPCsV-LUJw3Fc17pisJcDWJh8pk41vhNNT8VuQ70izG6P9LJy20n-Ap6nXX3mbp17D6t0qJ7T4x2K2_hxjZF7-Lqe8PeEPtXZa-TZUw2h_cuV-Ub4jyeRR5aRwMNYTJsv3t82aTWwxZK_AOrAF1B5OAmsJOoyXqjH8YcIQWtU2Nf7o0xOGue1MpXSv2Ut9H7tEV5JdMuijk7Px2ePQs4RTFO4Q",
+        description: "Buttery soft modal jersey fabric with easy-clip nursing access and flattering adjustable empire waist belt. Tailored for late pregnancy and postpartum skin-to-skin bonding."
+      }
+    ];
+
+    // State
+    let cart = [];
+    let wishlist = [];
+    let discountRate = 0;
+    let currentModalProductId = null;
+    let modalQuantity = 1;
+    let selectedSize = "0-3 Months";
+
+    // Toast utility
+    function showToast(message, icon = "check_circle") {
+      const toast = document.getElementById("toastNotification");
+      const msgElem = document.getElementById("toastMessage");
+      const iconElem = document.getElementById("toastIcon");
+
+      msgElem.textContent = message;
+      iconElem.textContent = icon;
+      toast.classList.remove("translate-y-20", "opacity-0", "pointer-events-none");
+
+      setTimeout(() => {
+        toast.classList.add("translate-y-20", "opacity-0", "pointer-events-none");
+      }, 3000);
+    }
+
+    // Copy Voucher Code
+    function copyPromo(code) {
+      navigator.clipboard.writeText(code).then(() => {
+        showToast(`Promo code "${code}" copied to clipboard!`, "content_copy");
+        document.getElementById("promoInput").value = code;
+      });
+    }
+
+    // Category Filtering
+    function filterCategory(catKey) {
+      const cards = document.querySelectorAll(".product-card");
+      const chips = document.querySelectorAll(".filter-chip");
+
+      chips.forEach(chip => {
+        chip.classList.remove("bg-secondary-fixed", "text-primary", "font-bold", "border-secondary-fixed-dim");
+        chip.classList.add("bg-surface-container-lowest", "text-on-surface-variant");
+      });
+
+      const activeChip = document.getElementById(`btn-filter-${catKey}`);
+      if (activeChip) {
+        activeChip.classList.remove("bg-surface-container-lowest", "text-on-surface-variant");
+        activeChip.classList.add("bg-secondary-fixed", "text-primary", "font-bold", "border-secondary-fixed-dim");
+      }
+
+      cards.forEach(card => {
+        const itemCat = card.getAttribute("data-category");
+        if (catKey === "all" || itemCat === catKey) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    }
+
+    // Active Nav Indicator (Top Navbar)
+    function setActiveNav(element, category) {
+      document.querySelectorAll("nav a").forEach(link => {
+        link.className = "text-on-surface-variant dark:text-tertiary-fixed-dim hover:text-primary dark:hover:text-inverse-primary transition-colors pb-1";
+      });
+      element.className = "text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1";
+      filterCategory(category);
+    }
+
+    // Mobile Navigation Toggle
+    function toggleMobileNav() {
+      const menu = document.getElementById("mobileNavMenu");
+      menu.classList.toggle("hidden");
+      menu.classList.toggle("flex");
+    }
+
+    // Live Header Search Filter
+    function handleGlobalSearch(e) {
+      const query = e.target.value.toLowerCase().trim();
+      const cards = document.querySelectorAll(".product-card");
+      const notice = document.getElementById("searchNotice");
+      const keyword = document.getElementById("searchKeyword");
+
+      if (query.length > 0) {
+        notice.classList.remove("hidden");
+        keyword.textContent = query;
+      } else {
+        notice.classList.add("hidden");
+      }
+
+      cards.forEach(card => {
+        const title = card.getAttribute("data-title").toLowerCase();
+        if (title.includes(query)) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    }
+
+    function resetSearch() {
+      const input = document.getElementById("headerSearchInput");
+      if (input) input.value = "";
+      document.getElementById("searchNotice").classList.add("hidden");
+      filterCategory('all');
+    }
+
+    // Wishlist Toggle
+    function toggleWishlist(productId, btn) {
+      const idx = wishlist.indexOf(productId);
+      const icon = btn.querySelector(".material-symbols-outlined");
+
+      if (idx > -1) {
+        wishlist.splice(idx, 1);
+        icon.classList.remove("text-primary", "fill-1");
+        showToast("Item removed from Wishlist", "favorite_border");
+      } else {
+        wishlist.push(productId);
+        icon.classList.add("text-primary", "fill-1");
+        showToast("Item saved to Wishlist!", "favorite");
+      }
+      document.getElementById("wishlistCountBadge").textContent = wishlist.length;
+    }
+
+    function toggleWishlistDrawer() {
+      if (wishlist.length === 0) {
+        showToast("Your Wishlist is currently empty", "favorite");
+      } else {
+        showToast(`You have ${wishlist.length} item(s) saved in your Wishlist`, "favorite");
+      }
+    }
+
+    // Cart Drawer Controls
+    function openCartDrawer() {
+      document.getElementById("cartDrawer").classList.remove("hidden");
+    }
+
+    function closeCartDrawer() {
+      document.getElementById("cartDrawer").classList.add("hidden");
+    }
+
+    // Add to Cart Logic
+    function addToCart(productId, qty = 1, size = "0-3M") {
+      const prod = productsDB.find(p => p.id === productId);
+      if (!prod) return;
+
+      const existingIndex = cart.findIndex(item => item.id === productId && item.size === size);
+      if (existingIndex > -1) {
+        cart[existingIndex].qty += qty;
+      } else {
+        cart.push({
+          id: prod.id,
+          title: prod.title,
+          price: prod.price,
+          img: prod.img,
+          size: size,
+          qty: qty
+        });
+      }
+
+      updateCartUI();
+      openCartDrawer();
+      showToast(`${prod.title} added to your basket!`);
+    }
+
+    // Update Cart UI
+    function updateCartUI() {
+      const list = document.getElementById("cartItemList");
+      const countBadge = document.getElementById("cartCountBadge");
+      const countText = document.getElementById("cartCountText");
+      const subtotalElem = document.getElementById("cartSubtotal");
+      const discountRow = document.getElementById("discountRow");
+      const discountElem = document.getElementById("cartDiscount");
+      const totalElem = document.getElementById("cartTotal");
+      const shippingNotice = document.getElementById("shippingNotice");
+      const shippingProgressBar = document.getElementById("shippingProgressBar");
+      const shippingPercent = document.getElementById("shippingPercent");
+      const shippingElem = document.getElementById("cartShipping");
+
+      let totalCount = 0;
+      let subtotal = 0;
+
+      list.innerHTML = "";
+
+      if (cart.length === 0) {
+        list.innerHTML = `
+          <div class="text-center py-12 text-on-surface-variant flex flex-col items-center">
+            <span class="material-symbols-outlined text-[48px] text-tertiary mb-2">production_quantity_limits</span>
+            <p class="font-headline-sm text-[18px]">Your basket is empty</p>
+            <p class="text-body-sm font-body-sm mt-1">Nurture your little one with our soothing essentials.</p>
+          </div>
+        `;
+      } else {
+        cart.forEach((item, index) => {
+          totalCount += item.qty;
+          subtotal += item.price * item.qty;
+
+          const itemElem = document.createElement("div");
+          itemElem.className = "flex gap-4 p-3 rounded-lg bg-surface-container-low border border-surface-container-high items-center";
+          itemElem.innerHTML = `
+            <img src="${item.img}" alt="${item.title}" class="w-16 h-16 rounded-md object-cover bg-surface-container-lowest">
+            <div class="flex-1">
+              <h4 class="text-label-md font-label-md text-on-surface line-clamp-1">${item.title}</h4>
+              <p class="text-label-sm font-label-sm text-tertiary">Size: ${item.size} • $${item.price.toFixed(2)}</p>
+              <div class="flex items-center gap-2 mt-2">
+                <button onclick="changeQty(${index}, -1)" class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-highest">-</button>
+                <span class="text-label-md font-semibold px-1">${item.qty}</span>
+                <button onclick="changeQty(${index}, 1)" class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-highest">+</button>
+              </div>
+            </div>
+            <div class="flex flex-col items-end justify-between self-stretch">
+              <button onclick="removeCartItem(${index})" class="text-outline hover:text-error transition-colors" aria-label="Remove item">
+                <span class="material-symbols-outlined text-[18px]">delete</span>
+              </button>
+              <span class="font-headline-sm text-[16px] text-on-surface font-bold">$${(item.price * item.qty).toFixed(2)}</span>
+            </div>
+          `;
+          list.appendChild(itemElem);
+        });
+      }
+
+      countBadge.textContent = totalCount;
+      countText.textContent = totalCount;
+      subtotalElem.textContent = `$${subtotal.toFixed(2)}`;
+
+      // Free shipping progress logic ($50 threshold)
+      const threshold = 50.00;
+      if (subtotal >= threshold || subtotal === 0) {
+        if (subtotal >= threshold) {
+          shippingNotice.textContent = "You've unlocked Free Carbon-Neutral Shipping!";
+          shippingProgressBar.style.width = "100%";
+          shippingPercent.textContent = "100%";
+          shippingElem.textContent = "FREE";
+        } else {
+          shippingNotice.textContent = "Add $50.00 for Free Shipping";
+          shippingProgressBar.style.width = "0%";
+          shippingPercent.textContent = "0%";
+          shippingElem.textContent = "$5.00";
+        }
+      } else {
+        const remaining = (threshold - subtotal).toFixed(2);
+        const percent = Math.min(Math.round((subtotal / threshold) * 100), 100);
+        shippingNotice.textContent = `Add $${remaining} more for Free Shipping`;
+        shippingProgressBar.style.width = `${percent}%`;
+        shippingPercent.textContent = `${percent}%`;
+        shippingElem.textContent = "$5.00";
+      }
+
+      // Promo calculation
+      let discountAmount = 0;
+      if (discountRate > 0 && subtotal > 0) {
+        discountAmount = subtotal * discountRate;
+        discountRow.classList.remove("hidden");
+        discountElem.textContent = `-$${discountAmount.toFixed(2)}`;
+      } else {
+        discountRow.classList.add("hidden");
+      }
+
+      const shippingCost = (subtotal >= threshold || subtotal === 0) ? 0 : 5.00;
+      const finalTotal = Math.max(0, subtotal - discountAmount + shippingCost);
+      totalElem.textContent = `$${finalTotal.toFixed(2)}`;
+    }
+
+    function changeQty(index, delta) {
+      if (!cart[index]) return;
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    function removeCartItem(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+      showToast("Item removed from basket");
+    }
+
+    // Apply Promo Code
+    function applyPromoCode() {
+      const val = document.getElementById("promoInput").value.trim().toUpperCase();
+      if (val === "HELLOBABY") {
+        discountRate = 0.20;
+        showToast("20% Blossom discount applied successfully!", "redeem");
+      } else {
+        discountRate = 0;
+        showToast("Invalid promo code. Use HELLOBABY", "error");
+      }
+      updateCartUI();
+    }
+
+    // Checkout Modal
+    function triggerDemoCheckout() {
+      if (cart.length === 0) {
+        showToast("Your basket is empty", "shopping_bag");
+        return;
+      }
+      closeCartDrawer();
+      document.getElementById("checkoutSuccessModal").classList.remove("hidden");
+      document.getElementById("checkoutSuccessModal").classList.add("flex");
+      cart = [];
+      discountRate = 0;
+      document.getElementById("promoInput").value = "";
+      updateCartUI();
+    }
+
+    function closeCheckoutSuccess() {
+      document.getElementById("checkoutSuccessModal").classList.add("hidden");
+      document.getElementById("checkoutSuccessModal").classList.remove("flex");
+    }
+
+    // Quick View Modal
+    function openQuickView(productId) {
+      const prod = productsDB.find(p => p.id === productId);
+      if (!prod) return;
+
+      currentModalProductId = prod.id;
+      modalQuantity = 1;
+
+      document.getElementById("modalProductImg").src = prod.img;
+      document.getElementById("modalProductBadge").textContent = prod.badge;
+      document.getElementById("modalProductTitle").textContent = prod.title;
+      document.getElementById("modalProductPrice").textContent = `$${prod.price.toFixed(2)}`;
+      document.getElementById("modalQtyDisplay").textContent = modalQuantity;
+
+      // Handle maternity vs newborn sizes
+      const sizeGroup = document.getElementById("sizeOptions");
+      if (prod.category === "maternity") {
+        sizeGroup.innerHTML = `
+          <button onclick="selectSize(this)" class="size-pill active-size px-3.5 py-1.5 rounded-full text-label-sm border border-primary bg-primary text-on-primary">S (0-4)</button>
+          <button onclick="selectSize(this)" class="size-pill px-3.5 py-1.5 rounded-full text-label-sm border border-outline-variant text-on-surface hover:border-primary">M (6-10)</button>
+          <button onclick="selectSize(this)" class="size-pill px-3.5 py-1.5 rounded-full text-label-sm border border-outline-variant text-on-surface hover:border-primary">L (12-16)</button>
+        `;
+        selectedSize = "S (0-4)";
+      } else if (prod.category === "nursery" || prod.category === "feeding") {
+        sizeGroup.innerHTML = `
+          <button onclick="selectSize(this)" class="size-pill active-size px-3.5 py-1.5 rounded-full text-label-sm border border-primary bg-primary text-on-primary">Standard Size</button>
+        `;
+        selectedSize = "Standard Size";
+      } else {
+        sizeGroup.innerHTML = `
+          <button onclick="selectSize(this)" class="size-pill active-size px-3.5 py-1.5 rounded-full text-label-sm border border-primary bg-primary text-on-primary">0-3 Months</button>
+          <button onclick="selectSize(this)" class="size-pill px-3.5 py-1.5 rounded-full text-label-sm border border-outline-variant text-on-surface hover:border-primary">3-6 Months</button>
+          <button onclick="selectSize(this)" class="size-pill px-3.5 py-1.5 rounded-full text-label-sm border border-outline-variant text-on-surface hover:border-primary">6-12 Months</button>
+        `;
+        selectedSize = "0-3 Months";
+      }
+
+      document.getElementById("quickViewModal").classList.remove("hidden");
+      document.getElementById("quickViewModal").classList.add("flex");
+    }
+
+    function closeQuickView() {
+      document.getElementById("quickViewModal").classList.add("hidden");
+      document.getElementById("quickViewModal").classList.remove("flex");
+    }
+
+    function selectSize(btn) {
+      document.querySelectorAll(".size-pill").forEach(p => {
+        p.className = "size-pill px-3.5 py-1.5 rounded-full text-label-sm border border-outline-variant text-on-surface hover:border-primary";
+      });
+      btn.className = "size-pill active-size px-3.5 py-1.5 rounded-full text-label-sm border border-primary bg-primary text-on-primary";
+      selectedSize = btn.textContent;
+    }
+
+    function adjustModalQty(delta) {
+      modalQuantity = Math.max(1, modalQuantity + delta);
+      document.getElementById("modalQtyDisplay").textContent = modalQuantity;
+    }
+
+    function addModalItemToCart() {
+      if (currentModalProductId) {
+        addToCart(currentModalProductId, modalQuantity, selectedSize);
+        closeQuickView();
+      }
+    }
+
+    // Newsletter Submission
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const email = document.getElementById("newsletterEmail").value;
+      if (email) {
+        showToast("Welcome to the Nest! 15% voucher sent to your email.", "mark_email_read");
+        document.getElementById("newsletterEmail").value = "";
+      }
+    }
+  </script>
+</body></html>
